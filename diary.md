@@ -9,3 +9,9 @@
 **Изменённые файлы:** `AGENT.md`, `STATUS.md`
 **Результат:** Установлены строгие правила работы агента: роль, цель, разрешённые источники, запреты, обязательные правила, форматы STATUS.md и diary.md.
 **Проблемы / [NEED_AUTHOR_INPUT]:** нет
+
+## 2025-05-04 13:57 UTC
+**Действие:** Закоммичены изменения в Git репозиторий lab_case
+**Изменённые файлы:** `AGENT.md`, `CLAUDE.md`, `STATUS.md`, `diary.md`, `exp/`, `materials/`, `notes/`, `paper/`, `statement/`
+**Результат:** Создан корневой коммит (73b8eca) с сообщением "Init lab_case with AGENT.md contract and initial structure". Все файлы добавлены в отслеживание Git.
+**Проблемы / [NEED_AUTHOR_INPUT]:** нет
