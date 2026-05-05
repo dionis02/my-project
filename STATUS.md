@@ -59,8 +59,14 @@
 - Создана сводная таблица предварительных результатов, описаны ограничения и рекомендации для окончательной проверки.
 - Все численные значения взяты непосредственно из `models_cv_summary_compact.csv` и `models_cv_ranking.csv`.
 
+## 2026-05-05 01:15 UTC
+Начата переделка проекта с прогнозирования энергии сродства к электрону (EA) на прогнозирование HOMO–LUMO gap малых молекул классическими методами ML. Новая публичная тема: "Prediction of the HOMO–LUMO gap of small molecules using classical machine learning methods". Все изменения минимальны и обратимы; старые файлы не удаляются, результаты не пересчитываются. Артефакты из dopanti_paper/ используются как пилотные результаты для обновлённой постановки.
+
 ## Сейчас в работе
-- Уточнение литературы, gap analysis, гипотез и экспериментального отчёта E1 с учётом ноутбука `dopanti_paper/dopanti_small_mols_final_exps.ipynb`.
+- Переделка statement/ файлов: MOTIVATION.md, LIT.md, HYPOTHESIS.md, MATH.md, TZ.md.
+- Обновление notes/results_inventory.md и exp/exp_reports/E1.md.
+- Создание notes/internal_feature_mapping.md для внутреннего соответствия признаков.
+- Анализ возможности получения top‑10 dissimilar molecules из существующих top‑20 артефактов.
 
 ## Готово
 - Учтено, что датасет находится в `dopanti_paper/compact_data_FHI_575molecules.csv`.
