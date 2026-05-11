@@ -1,3 +1,7 @@
 
 __pycache__/
 *.py[cod]
+
+# Generated predictive-maintenance binary artifacts
+predictive_maintenance/experiments/**/*.png
+predictive_maintenance/experiments/**/*.joblib
