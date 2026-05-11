@@ -44,7 +44,6 @@ class ExperimentConfig:
     output_dir: Path = Path("predictive_maintenance/experiments")
     cv_splits: int = 5
     quick: bool = False
-    n_jobs: int = 1
 
 
 def read_data(config: ExperimentConfig) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -126,7 +125,7 @@ def make_preprocessor(X: pd.DataFrame, scale_numeric: bool) -> ColumnTransformer
     return ColumnTransformer(transformers=transformers, remainder="drop", verbose_feature_names_out=False)
 
 
-def model_search_spaces(quick: bool = False, n_jobs: int = 1) -> dict[str, tuple[Pipeline, dict[str, list[object]]]]:
+def model_search_spaces(quick: bool = False) -> dict[str, tuple[Pipeline, dict[str, list[object]]]]:
     """Return sklearn models and GridSearchCV parameter grids."""
 
     logistic = Pipeline(
@@ -144,13 +143,13 @@ def model_search_spaces(quick: bool = False, n_jobs: int = 1) -> dict[str, tuple
     random_forest = Pipeline(
         steps=[
             ("preprocess", "passthrough"),
-            ("model", RandomForestClassifier(random_state=RANDOM_STATE, n_jobs=n_jobs, class_weight="balanced_subsample")),
+            ("model", RandomForestClassifier(random_state=RANDOM_STATE, n_jobs=-1, class_weight="balanced_subsample")),
         ]
     )
     extra_trees = Pipeline(
         steps=[
             ("preprocess", "passthrough"),
-            ("model", ExtraTreesClassifier(random_state=RANDOM_STATE, n_jobs=n_jobs, class_weight="balanced")),
+            ("model", ExtraTreesClassifier(random_state=RANDOM_STATE, n_jobs=-1, class_weight="balanced")),
         ]
     )
 
@@ -277,14 +276,7 @@ def save_eda_plots(train: pd.DataFrame, output_dir: Path) -> None:
     plt.close()
 
 
-def run_grid_searches(
-    X: pd.DataFrame,
-    y: pd.Series,
-    output_dir: Path,
-    cv_splits: int,
-    quick: bool,
-    n_jobs: int = 1,
-) -> tuple[pd.DataFrame, Pipeline]:
+def run_grid_searches(X: pd.DataFrame, y: pd.Series, output_dir: Path, cv_splits: int, quick: bool) -> tuple[pd.DataFrame, Pipeline]:
     """Run stratified ROC-AUC GridSearchCV for several sklearn model families."""
 
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -292,7 +284,7 @@ def run_grid_searches(
     rows: list[pd.DataFrame] = []
     best_estimators: dict[str, Pipeline] = {}
 
-    for model_name, (pipe, grid) in model_search_spaces(quick=quick, n_jobs=n_jobs).items():
+    for model_name, (pipe, grid) in model_search_spaces(quick=quick).items():
         scale_numeric = model_name == "logistic_regression"
         pipe.set_params(preprocess=make_preprocessor(X, scale_numeric=scale_numeric))
         search = GridSearchCV(
@@ -300,7 +292,7 @@ def run_grid_searches(
             param_grid=grid,
             scoring="roc_auc",
             cv=cv,
-            n_jobs=n_jobs,
+            n_jobs=-1,
             refit=True,
             verbose=1,
             return_train_score=True,
@@ -319,20 +311,13 @@ def run_grid_searches(
     return all_results, best_estimators[str(best_model_name)]
 
 
-def save_validation_plots(
-    best_model: Pipeline,
-    X: pd.DataFrame,
-    y: pd.Series,
-    output_dir: Path,
-    cv_splits: int,
-    n_jobs: int = 1,
-) -> float:
+def save_validation_plots(best_model: Pipeline, X: pd.DataFrame, y: pd.Series, output_dir: Path, cv_splits: int) -> float:
     """Save an out-of-fold ROC curve for the selected model."""
 
     figures_dir = output_dir / "figures"
     figures_dir.mkdir(parents=True, exist_ok=True)
     cv = StratifiedKFold(n_splits=cv_splits, shuffle=True, random_state=RANDOM_STATE)
-    oof_proba = cross_val_predict(best_model, X, y, cv=cv, method="predict_proba", n_jobs=n_jobs)[:, 1]
+    oof_proba = cross_val_predict(best_model, X, y, cv=cv, method="predict_proba", n_jobs=-1)[:, 1]
     auc = roc_auc_score(y, oof_proba)
 
     RocCurveDisplay.from_predictions(y, oof_proba)
@@ -381,8 +366,8 @@ def run_experiment(config: ExperimentConfig) -> dict[str, object]:
     for include_flags in [False, True]:
         setting_dir = config.output_dir / ("with_failure_flags" if include_flags else "sensor_features_only")
         X, y, X_test = split_features_target(train, test, include_failure_mode_flags=include_flags)
-        results, best_model = run_grid_searches(X, y, setting_dir, config.cv_splits, config.quick, config.n_jobs)
-        auc = save_validation_plots(best_model, X, y, setting_dir, config.cv_splits, config.n_jobs)
+        results, best_model = run_grid_searches(X, y, setting_dir, config.cv_splits, config.quick)
+        auc = save_validation_plots(best_model, X, y, setting_dir, config.cv_splits)
         best_row = results.iloc[0].to_dict()
         best_row["include_failure_mode_flags"] = include_flags
         best_row["best_oof_auc"] = auc
@@ -428,16 +413,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=Path("predictive_maintenance/experiments"))
     parser.add_argument("--cv-splits", type=int, default=5)
     parser.add_argument("--quick", action="store_true", help="Run a small smoke-test grid before the full search.")
-    parser.add_argument(
-        "--n-jobs",
-        type=int,
-        default=1,
-        help=(
-            "Number of parallel jobs for sklearn searches and tree estimators. "
-            "The default keeps execution serial to avoid sklearn/joblib parallel warnings "
-            "and nested parallelism; set -1 if your local sklearn/joblib stack supports it."
-        ),
-    )
     return parser.parse_args()
 
 
@@ -450,7 +425,6 @@ def main() -> None:
         output_dir=args.output_dir,
         cv_splits=args.cv_splits,
         quick=args.quick,
-        n_jobs=args.n_jobs,
     )
     result = run_experiment(config)
     print(json.dumps(result, indent=2, default=str))
