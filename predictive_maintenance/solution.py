@@ -1,9 +1,8 @@
 """Reproducible sklearn solution for the predictive-maintenance competition.
 
-The module is intentionally notebook-friendly: the final notebook imports the
-functions below, runs the same grid-search experiments, saves diagnostics into a
-single experiment directory, trains the selected model on all labelled data, and
-writes ``fin_submission.csv`` with probabilities from ``predict_proba``.
+The module contains the same self-contained workflow mirrored in the final
+notebook: grid-search experiments, diagnostic artifacts, final training on all
+labelled data, and ``fin_submission.csv`` probabilities from ``predict_proba``.
 """
 
 from __future__ import annotations
@@ -29,8 +28,8 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 TARGET = "Machine failure"
 ID_COLUMN = "id"
-DROP_COLUMNS = ["Product ID"]
 FAILURE_MODE_COLUMNS = ["TWF", "HDF", "PWF", "OSF", "RNF"]
+DROP_COLUMNS = ["Product ID", *FAILURE_MODE_COLUMNS, "failure_mode_sum", "any_failure_mode_flag"]
 RANDOM_STATE = 42
 
 
@@ -83,18 +82,20 @@ def add_engineered_features(df: pd.DataFrame) -> pd.DataFrame:
 def split_features_target(
     train: pd.DataFrame,
     test: pd.DataFrame,
-    include_failure_mode_flags: bool = True,
 ) -> tuple[pd.DataFrame, pd.Series, pd.DataFrame]:
-    """Create aligned train/test feature matrices and target vector."""
+    """Create aligned train/test feature matrices and target vector.
+
+    The competition CSVs include five three-letter failure-mode flag columns
+    (TWF, HDF, PWF, OSF, RNF). They are explicitly excluded from model
+    features, together with engineered aggregates derived from them, to avoid
+    relying on those label-like signals.
+    """
 
     train_fe = add_engineered_features(train)
     test_fe = add_engineered_features(test)
     y = train_fe[TARGET].astype(int)
 
     drop_cols = [TARGET, ID_COLUMN, *DROP_COLUMNS]
-    if not include_failure_mode_flags:
-        drop_cols.extend([*FAILURE_MODE_COLUMNS, "failure_mode_sum", "any_failure_mode_flag"])
-
     X = train_fe.drop(columns=[c for c in drop_cols if c in train_fe.columns])
     X_test = test_fe.drop(columns=[c for c in drop_cols if c in test_fe.columns])
     X_test = X_test.reindex(columns=X.columns)
@@ -180,47 +181,42 @@ def model_search_spaces(quick: bool = False) -> dict[str, tuple[Pipeline, dict[s
         "logistic_regression": (
             logistic,
             {
-                "preprocess__num__imputer__strategy": ["median", "mean", "constant"],
-                "preprocess__num__imputer__fill_value": [0],
-                "preprocess__cat__imputer__strategy": ["most_frequent", "constant"],
-                "preprocess__cat__imputer__fill_value": ["missing"],
-                "model__C": [0.05, 0.1, 1.0, 5.0, 10.0],
+                "preprocess__num__imputer__strategy": ["median"],
+                "preprocess__cat__imputer__strategy": ["most_frequent"],
+                "model__C": [1.0],
             },
         ),
         "hist_gradient_boosting": (
             hgb,
             {
-                "preprocess__num__imputer__strategy": ["median", "mean"],
-                "preprocess__cat__imputer__strategy": ["most_frequent", "constant"],
-                "preprocess__cat__imputer__fill_value": ["missing"],
-                "model__learning_rate": [0.03, 0.06, 0.1],
-                "model__max_leaf_nodes": [15, 31, 63],
-                "model__max_iter": [250, 450],
-                "model__l2_regularization": [0.0, 0.05, 0.2],
+                "preprocess__num__imputer__strategy": ["median"],
+                "preprocess__cat__imputer__strategy": ["most_frequent"],
+                "model__learning_rate": [0.06, 0.08],
+                "model__max_leaf_nodes": [31],
+                "model__max_iter": [250],
+                "model__l2_regularization": [0.0],
             },
         ),
         "random_forest": (
             random_forest,
             {
-                "preprocess__num__imputer__strategy": ["median", "mean"],
-                "preprocess__cat__imputer__strategy": ["most_frequent", "constant"],
-                "preprocess__cat__imputer__fill_value": ["missing"],
-                "model__n_estimators": [300, 600],
-                "model__max_depth": [8, 14, None],
-                "model__min_samples_leaf": [1, 5, 15],
-                "model__max_features": ["sqrt", 0.8],
+                "preprocess__num__imputer__strategy": ["median"],
+                "preprocess__cat__imputer__strategy": ["most_frequent"],
+                "model__n_estimators": [160],
+                "model__max_depth": [12],
+                "model__min_samples_leaf": [1],
+                "model__max_features": ["sqrt"],
             },
         ),
         "extra_trees": (
             extra_trees,
             {
-                "preprocess__num__imputer__strategy": ["median", "mean"],
-                "preprocess__cat__imputer__strategy": ["most_frequent", "constant"],
-                "preprocess__cat__imputer__fill_value": ["missing"],
-                "model__n_estimators": [400, 700],
-                "model__max_depth": [8, 14, None],
-                "model__min_samples_leaf": [1, 5, 15],
-                "model__max_features": ["sqrt", 0.8],
+                "preprocess__num__imputer__strategy": ["median"],
+                "preprocess__cat__imputer__strategy": ["most_frequent"],
+                "model__n_estimators": [200],
+                "model__max_depth": [12],
+                "model__min_samples_leaf": [1],
+                "model__max_features": ["sqrt"],
             },
         ),
     }
@@ -305,7 +301,7 @@ def run_grid_searches(X: pd.DataFrame, y: pd.Series, output_dir: Path, cv_splits
         best_estimators[model_name] = search.best_estimator_
         joblib.dump(search.best_estimator_, output_dir / f"best_{model_name}.joblib")
 
-    all_results = pd.concat(rows, ignore_index=True).sort_values("rank_test_score")
+    all_results = pd.concat(rows, ignore_index=True).sort_values("mean_test_score", ascending=False)
     all_results.to_csv(output_dir / "grid_results_all.csv", index=False)
     best_model_name = all_results.iloc[0]["model_name"]
     return all_results, best_estimators[str(best_model_name)]
@@ -339,6 +335,7 @@ def train_and_write_submission(
     X_test: pd.DataFrame,
     sample_submission: pd.DataFrame,
     output_path: Path = Path("fin_submission.csv"),
+    alias_output_path: Path = Path("for_submission.csv"),
 ) -> pd.DataFrame:
     """Fit the selected estimator on all training data and write final probabilities."""
 
@@ -347,6 +344,7 @@ def train_and_write_submission(
     submission = sample_submission.copy()
     submission[TARGET] = probabilities
     submission.to_csv(output_path, index=False)
+    submission.to_csv(alias_output_path, index=False)
     return submission
 
 
@@ -357,37 +355,20 @@ def run_experiment(config: ExperimentConfig) -> dict[str, object]:
     train, test, sample_submission = read_data(config)
     save_eda_plots(train, config.output_dir)
 
-    summaries = []
-    best_overall_auc = -np.inf
-    best_overall_model: Pipeline | None = None
-    best_overall_features: tuple[pd.DataFrame, pd.Series, pd.DataFrame] | None = None
-    best_flag_setting = True
+    setting_dir = config.output_dir / "sensor_features_only"
+    X, y, X_test = split_features_target(train, test)
+    results, best_overall_model = run_grid_searches(X, y, setting_dir, config.cv_splits, config.quick)
+    best_overall_auc = save_validation_plots(best_overall_model, X, y, setting_dir, config.cv_splits)
 
-    for include_flags in [False, True]:
-        setting_dir = config.output_dir / ("with_failure_flags" if include_flags else "sensor_features_only")
-        X, y, X_test = split_features_target(train, test, include_failure_mode_flags=include_flags)
-        results, best_model = run_grid_searches(X, y, setting_dir, config.cv_splits, config.quick)
-        auc = save_validation_plots(best_model, X, y, setting_dir, config.cv_splits)
-        best_row = results.iloc[0].to_dict()
-        best_row["include_failure_mode_flags"] = include_flags
-        best_row["best_oof_auc"] = auc
-        summaries.append(best_row)
-        if auc > best_overall_auc:
-            best_overall_auc = auc
-            best_overall_model = best_model
-            best_overall_features = (X, y, X_test)
-            best_flag_setting = include_flags
-
-    summary = pd.DataFrame(summaries).sort_values("best_oof_auc", ascending=False)
+    best_row = results.iloc[0].to_dict()
+    best_row["excluded_failure_mode_flags"] = ",".join(FAILURE_MODE_COLUMNS)
+    best_row["best_oof_auc"] = best_overall_auc
+    summary = pd.DataFrame([best_row]).sort_values("best_oof_auc", ascending=False)
     summary.to_csv(config.output_dir / "experiment_summary.csv", index=False)
     (config.output_dir / "experiment_summary.json").write_text(
         json.dumps(summary.iloc[0].to_dict(), indent=2, default=str), encoding="utf-8"
     )
 
-    if best_overall_model is None or best_overall_features is None:
-        raise RuntimeError("No model was fitted. Check the experiment configuration.")
-
-    X, y, X_test = best_overall_features
     submission = train_and_write_submission(
         best_overall_model,
         X,
@@ -395,11 +376,12 @@ def run_experiment(config: ExperimentConfig) -> dict[str, object]:
         X_test,
         sample_submission,
         output_path=Path("fin_submission.csv"),
+        alias_output_path=Path("for_submission.csv"),
     )
     joblib.dump(best_overall_model, config.output_dir / "final_model.joblib")
     return {
         "best_oof_auc": best_overall_auc,
-        "include_failure_mode_flags": best_flag_setting,
+        "excluded_failure_mode_flags": FAILURE_MODE_COLUMNS,
         "submission_rows": len(submission),
         "output_dir": str(config.output_dir),
     }
