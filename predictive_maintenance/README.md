@@ -20,14 +20,6 @@ After validating the environment, run the full grid search:
 python predictive_maintenance/solution.py
 ```
 
-By default the script uses `--n-jobs 1` to avoid sklearn/joblib parallel warnings such as
-`sklearn.utils.parallel.delayed should be used with sklearn.utils.parallel.Parallel`.
-If your local environment handles sklearn parallelism cleanly, you can opt in to parallel execution:
-
-```bash
-python predictive_maintenance/solution.py --n-jobs -1
-```
-
 The pipeline compares multiple sklearn model families, multiple imputation approaches, sensor-only features versus available failure-mode flags, and domain features including:
 
 ```text
