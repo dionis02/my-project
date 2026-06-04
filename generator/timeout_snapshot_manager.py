@@ -9,6 +9,41 @@ from pathlib import Path
 from rdkit import Chem
 
 
+def parent_timeout_return_iter(current_iter, dynamic_split_until_iter):
+    """
+    Return DFS level to advance when a child sees an expired parent budget.
+
+    Up to ``dynamic_split_until_iter`` this preserves dynamic behavior and
+    returns one level up. Deeper than that, it behaves like the old time mode:
+    jump back to the split boundary so one expired deep branch does not create
+    timeout snapshots on every intermediate depth.
+    """
+    if dynamic_split_until_iter < 1:
+        raise ValueError("dynamic_split_until_iter must be >= 1")
+
+    if current_iter > dynamic_split_until_iter:
+        return dynamic_split_until_iter
+
+    return current_iter - 1
+
+
+def current_timeout_return_iter(current_iter, dynamic_split_until_iter):
+    """
+    Return DFS level to advance when the current branch exceeds its budget.
+
+    Up to ``dynamic_split_until_iter`` the active DFS skips only the current
+    molecule on the current level. Deeper levels use old-like behavior and
+    return to the split boundary.
+    """
+    if dynamic_split_until_iter < 1:
+        raise ValueError("dynamic_split_until_iter must be >= 1")
+
+    if current_iter > dynamic_split_until_iter:
+        return dynamic_split_until_iter
+
+    return current_iter
+
+
 class TimeoutSnapshotManager:
     """
     Stores timeout branches and later restores full DFS state.
