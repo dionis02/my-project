@@ -2535,6 +2535,29 @@ def find_all_rotatable_bond_torsion_indices(mol):
     return torsions
 
 
+def last_growth_atom_is_ring_type(mol, last_growth):
+    """Return True when the terminal atom d of a last-growth torsion is a ring type."""
+    if last_growth is None or not mol.HasProp("name"):
+        return False
+    names = mol.GetProp("name").split()
+    d_idx = last_growth[3]
+    return d_idx < len(names) and names[d_idx] in ring_types
+
+    d_idx = mol.GetNumAtoms() - 1
+    d_atom = mol.GetAtomWithIdx(d_idx)
+    candidate_torsions = []
+    for c_atom in d_atom.GetNeighbors():
+        c_idx = c_atom.GetIdx()
+        for b_atom in c_atom.GetNeighbors():
+            b_idx = b_atom.GetIdx()
+            if b_idx == d_idx:
+                continue
+            for a_atom in b_atom.GetNeighbors():
+                a_idx = a_atom.GetIdx()
+                torsion = (a_idx, b_idx, c_idx, d_idx)
+                if torsion_indices_are_valid(mol, torsion):
+                    candidate_torsions.append(torsion)
+
 def find_last_growth_dihedral_indices(mol):
     """Return a deterministic a-b-c-d torsion where d is the last added atom."""
     if mol.GetNumAtoms() < 4:
@@ -2720,7 +2743,8 @@ def mapped_branch_geometry_difference_keeps_branch(query_mol, target_mol, query_
     """
     Preserve a branch if any current or growth-history geometry is distinct.
 
-    For a sewn ring-type atom, dihedral and in-plane angle are checked together:
+    The last-growth bond angle is checked only when its terminal atom is a ring
+    type. For a sewn ring-type atom, dihedral and in-plane angle are checked together:
     such geometries are duplicates only when BOTH values are within threshold.
     """
     update_branch_geometry_props(query_mol)
@@ -2738,15 +2762,16 @@ def mapped_branch_geometry_difference_keeps_branch(query_mol, target_mol, query_
             query_mol, target_mol, query_to_target, last_growth, LAST_GROWTH_TORSION_THRESHOLD
         ):
             return True
-        _, b_idx, c_idx, d_idx = last_growth
-        if mapped_angle_difference(
-            query_mol,
-            target_mol,
-            query_to_target,
-            (b_idx, c_idx, d_idx),
-            LAST_GROWTH_BOND_ANGLE_THRESHOLD,
-        ):
-            return True
+        if last_growth_atom_is_ring_type(query_mol, last_growth):
+            _, b_idx, c_idx, d_idx = last_growth
+            if mapped_angle_difference(
+                query_mol,
+                target_mol,
+                query_to_target,
+                (b_idx, c_idx, d_idx),
+                LAST_GROWTH_BOND_ANGLE_THRESHOLD,
+            ):
+                return True
 
     for torsion, angle_indices in parse_ring_attachments_prop(query_mol):
         torsion_differs = mapped_torsion_difference(
@@ -2786,7 +2811,8 @@ def is_global_selected_duplicate(mol, global_selected_index, *, rmsd_threshold=2
     1) same canonical SMILES and atom-type multiset;
     2) best no-alignment type-matched RMSD below threshold;
     3) no meaningful difference in current rotatable torsions, last-growth
-       geometry, or persisted ring-attachment dihedral/plane-angle geometry.
+       torsion, ring-type last-growth angle, or persisted ring-attachment
+       dihedral/plane-angle geometry.
     """
     smiles = safe_canonical_smiles(mol)
     if smiles is None:
