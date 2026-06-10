@@ -2416,7 +2416,12 @@ def best_type_matched_rmsd_no_alignment(query_mol, target_mol):
 
 
 ROTATABLE_BOND_TORSIONS_PROP = "rotatable_bond_torsions"
+PROTECTED_RING_ATTACHMENTS_PROP = "protected_ring_attachments"
 ROTATABLE_TORSION_THRESHOLD = 30.0
+LAST_GROWTH_TORSION_THRESHOLD = 30.0
+LAST_GROWTH_BOND_ANGLE_THRESHOLD = 5.0
+RING_ATTACHMENT_TORSION_THRESHOLD = 30.0
+RING_ATTACHMENT_PLANE_ANGLE_THRESHOLD = 5.0
 
 
 def torsion_indices_are_valid(mol, torsion):
@@ -2435,6 +2440,21 @@ def torsion_indices_are_valid(mol, torsion):
     )
 
 
+def angle_indices_are_valid(mol, angle_indices):
+    """Return True if b-c-d is a valid bonded angle."""
+    if angle_indices is None or len(angle_indices) != 3:
+        return False
+    if len(set(angle_indices)) != 3:
+        return False
+    if any(i < 0 or i >= mol.GetNumAtoms() for i in angle_indices):
+        return False
+    b_idx, c_idx, d_idx = angle_indices
+    return (
+        mol.GetBondBetweenAtoms(b_idx, c_idx) is not None
+        and mol.GetBondBetweenAtoms(c_idx, d_idx) is not None
+    )
+
+
 def heavy_neighbor_indices(atom, exclude_idx):
     """Heavy-atom neighbours of atom, excluding one atom index."""
     return sorted(
@@ -2445,13 +2465,7 @@ def heavy_neighbor_indices(atom, exclude_idx):
 
 
 def choose_torsion_side_neighbor(mol, center_idx, exclude_idx):
-    """
-    Pick one deterministic heavy neighbour to define a torsion side.
-
-    The selected neighbour is only a reference atom for measuring rotation around
-    the central bond.  Because duplicate comparison maps query indices to target
-    indices, the same reference atom is compared in the mapped molecule.
-    """
+    """Pick a deterministic heavy neighbour used to define a torsion side."""
     center_atom = mol.GetAtomWithIdx(center_idx)
     candidates = heavy_neighbor_indices(center_atom, exclude_idx)
     if not candidates:
@@ -2462,9 +2476,7 @@ def choose_torsion_side_neighbor(mol, center_idx, exclude_idx):
     def candidate_key(idx):
         atom = mol.GetAtomWithIdx(idx)
         atom_type = names[idx] if idx < len(names) else define_atom_type(atom)
-        # Prefer non-terminal and non-carbonyl-reference atoms when possible,
-        # then keep deterministic atom-index ordering.
-        non_terminal_penalty = 0 if len(heavy_neighbor_indices(atom, center_idx)) > 0 else 1
+        non_terminal_penalty = 0 if heavy_neighbor_indices(atom, center_idx) else 1
         carbonyl_penalty = 1 if atom_type == ".=O" else 0
         return (non_terminal_penalty, carbonyl_penalty, idx)
 
@@ -2472,15 +2484,7 @@ def choose_torsion_side_neighbor(mol, center_idx, exclude_idx):
 
 
 def bond_is_rotatable_for_duplicate_filter(mol, bond):
-    """
-    Rotatable-bond definition used by the global duplicate filter.
-
-    A bond is treated as rotatable if it is a non-ring, single, heavy-heavy bond
-    with at least one heavy neighbour on each side.  This intentionally uses a
-    broad generator-level definition rather than RDKit's strict medicinal-
-    chemistry rotatable-bond definition, because here the goal is to preserve
-    distinct 3D branches during generation.
-    """
+    """Broad generator-level definition of a currently rotatable bond."""
     if bond.IsInRing():
         return False
     if bond.GetBondType() != Chem.BondType.SINGLE:
@@ -2501,13 +2505,7 @@ def bond_is_rotatable_for_duplicate_filter(mol, bond):
 
 
 def find_all_rotatable_bond_torsion_indices(mol):
-    """
-    Return one a-b-c-d torsion for every currently rotatable bond b-c.
-
-    The output represents the current geometry of all rotatable bonds in the
-    molecule.  It replaces the previous growth-history logic: no limit of the
-    last four torsions is used, and ring-seed keys are not stored separately.
-    """
+    """Return one a-b-c-d torsion for every currently rotatable bond b-c."""
     if mol.GetNumAtoms() < 4:
         return []
 
@@ -2519,7 +2517,6 @@ def find_all_rotatable_bond_torsion_indices(mol):
 
         b_idx = bond.GetBeginAtomIdx()
         c_idx = bond.GetEndAtomIdx()
-        # Canonicalize central bond orientation for stable SDF/debug strings.
         if b_idx > c_idx:
             b_idx, c_idx = c_idx, b_idx
 
@@ -2530,9 +2527,6 @@ def find_all_rotatable_bond_torsion_indices(mol):
 
         a_idx = choose_torsion_side_neighbor(mol, b_idx, c_idx)
         d_idx = choose_torsion_side_neighbor(mol, c_idx, b_idx)
-        if a_idx is None or d_idx is None:
-            continue
-
         torsion = (a_idx, b_idx, c_idx, d_idx)
         if torsion_indices_are_valid(mol, torsion):
             torsions.append(torsion)
@@ -2541,19 +2535,101 @@ def find_all_rotatable_bond_torsion_indices(mol):
     return torsions
 
 
-def serialize_rotatable_bond_torsions(torsions):
-    """Serialize current rotatable-bond torsions to an SDF-safe string."""
+def last_growth_atom_is_ring_type(mol, last_growth):
+    """Return True when the terminal atom d of a last-growth torsion is a ring type."""
+    if last_growth is None or not mol.HasProp("name"):
+        return False
+    names = mol.GetProp("name").split()
+    d_idx = last_growth[3]
+    return d_idx < len(names) and names[d_idx] in ring_types
+
+
+def find_last_growth_dihedral_indices(mol):
+    """Return a deterministic a-b-c-d torsion where d is the last added atom."""
+    if mol.GetNumAtoms() < 4:
+        return None
+
+    d_idx = mol.GetNumAtoms() - 1
+    d_atom = mol.GetAtomWithIdx(d_idx)
+    candidate_torsions = []
+    for c_atom in d_atom.GetNeighbors():
+        c_idx = c_atom.GetIdx()
+        for b_atom in c_atom.GetNeighbors():
+            b_idx = b_atom.GetIdx()
+            if b_idx == d_idx:
+                continue
+            for a_atom in b_atom.GetNeighbors():
+                a_idx = a_atom.GetIdx()
+                torsion = (a_idx, b_idx, c_idx, d_idx)
+                if torsion_indices_are_valid(mol, torsion):
+                    candidate_torsions.append(torsion)
+
+    if not candidate_torsions:
+        return None
+    candidate_torsions.sort(
+        key=lambda t: (
+            abs(t[2] - (d_idx - 1)),
+            abs(t[1] - (d_idx - 2)),
+            abs(t[0] - (d_idx - 3)),
+        )
+    )
+    return candidate_torsions[0]
+
+
+def find_new_ring_attachment_geometries(mol):
+    """
+    Find geometry created when a ring-type atom is attached to an existing ring.
+
+    Each descriptor contains both a-b-c-d dihedral and b-c-d in-plane angle.
+    The attached atom d must still be outside a ring; descriptors are persisted in
+    a molecule property so the same geometry remains protected after later growth
+    or after the new ring is closed.
+    """
+    if not mol.HasProp("name") or mol.GetNumAtoms() < 4:
+        return []
+
+    names = mol.GetProp("name").split()
+    descriptors = []
+    for d_atom in mol.GetAtoms():
+        d_idx = d_atom.GetIdx()
+        if d_idx >= len(names) or names[d_idx] not in ring_types or d_atom.IsInRing():
+            continue
+        for c_atom in d_atom.GetNeighbors():
+            if not c_atom.IsInRing():
+                continue
+            c_idx = c_atom.GetIdx()
+            ring_b_neighbors = sorted(
+                n.GetIdx()
+                for n in c_atom.GetNeighbors()
+                if n.GetIdx() != d_idx and n.IsInRing()
+            )
+            for b_idx in ring_b_neighbors:
+                b_atom = mol.GetAtomWithIdx(b_idx)
+                a_candidates = sorted(
+                    n.GetIdx()
+                    for n in b_atom.GetNeighbors()
+                    if n.GetIdx() != c_idx and n.IsInRing()
+                )
+                if not a_candidates:
+                    a_candidates = heavy_neighbor_indices(b_atom, c_idx)
+                if not a_candidates:
+                    continue
+                torsion = (a_candidates[0], b_idx, c_idx, d_idx)
+                angle_indices = (b_idx, c_idx, d_idx)
+                if torsion_indices_are_valid(mol, torsion) and angle_indices_are_valid(mol, angle_indices):
+                    descriptors.append((torsion, angle_indices))
+
+    unique = {}
+    for torsion, angle_indices in descriptors:
+        unique[(torsion, angle_indices)] = (torsion, angle_indices)
+    return [unique[key] for key in sorted(unique)]
+
+
+def serialize_torsions(torsions):
     return ";".join(",".join(map(str, torsion)) for torsion in torsions)
 
 
-def parse_rotatable_bond_torsions_prop(mol):
-    """Parse rotatable torsions from the SDF property if present."""
-    if not mol.HasProp(ROTATABLE_BOND_TORSIONS_PROP):
-        return []
-    raw = mol.GetProp(ROTATABLE_BOND_TORSIONS_PROP).strip()
-    if not raw:
-        return []
-
+def parse_torsions(raw, mol):
     torsions = []
     for chunk in raw.split(";"):
         parts = [p.strip() for p in chunk.split(",")]
@@ -2561,112 +2637,168 @@ def parse_rotatable_bond_torsions_prop(mol):
             continue
         try:
             torsion = tuple(int(x) for x in parts)
-        except Exception:
+        except ValueError:
             continue
         if torsion_indices_are_valid(mol, torsion):
             torsions.append(torsion)
     return torsions
 
 
-def update_rotatable_bond_torsions_prop(mol):
-    """
-    Store all current rotatable-bond torsions in the molecule properties.
+def serialize_ring_attachments(descriptors):
+    return ";".join(
+        f"{','.join(map(str, torsion))}|{','.join(map(str, angle_indices))}"
+        for torsion, angle_indices in descriptors
+    )
 
-    This is a current-state descriptor, not a history.  It is recalculated before
-    global duplicate checking and then written to selected/all_selected SDFs for
-    transparency and reproducibility.  Obsolete branch-history props from earlier
-    experimental versions are cleared so the SDF contains only the active
-    rotatable-bond descriptor.
-    """
-    obsolete_props = [
-        "branch_geometry_keys",
-        "global_duplicate_branch_geometry_keys",
-        "global_duplicate_old_branch_geometry_keys",
-        "global_duplicate_last_growth_torsion",
-        "global_duplicate_old_last_growth_torsion",
-        "global_duplicate_last_ring_attachment_angles",
-        "global_duplicate_old_last_ring_attachment_angles",
-    ]
-    for prop_name in obsolete_props:
-        if mol.HasProp(prop_name):
-            mol.ClearProp(prop_name)
 
+def parse_ring_attachments_prop(mol):
+    if not mol.HasProp(PROTECTED_RING_ATTACHMENTS_PROP):
+        return []
+    descriptors = []
+    for chunk in mol.GetProp(PROTECTED_RING_ATTACHMENTS_PROP).split(";"):
+        if "|" not in chunk:
+            continue
+        torsion_raw, angle_raw = chunk.split("|", 1)
+        try:
+            torsion = tuple(int(x.strip()) for x in torsion_raw.split(","))
+            angle_indices = tuple(int(x.strip()) for x in angle_raw.split(","))
+        except ValueError:
+            continue
+        if torsion_indices_are_valid(mol, torsion) and angle_indices_are_valid(mol, angle_indices):
+            descriptors.append((torsion, angle_indices))
+    return descriptors
+
+
+def update_branch_geometry_props(mol):
+    """Refresh current torsions and retain all previously discovered ring attachments."""
     torsions = find_all_rotatable_bond_torsion_indices(mol)
     if torsions:
-        mol.SetProp(ROTATABLE_BOND_TORSIONS_PROP, serialize_rotatable_bond_torsions(torsions))
+        mol.SetProp(ROTATABLE_BOND_TORSIONS_PROP, serialize_torsions(torsions))
     elif mol.HasProp(ROTATABLE_BOND_TORSIONS_PROP):
         mol.ClearProp(ROTATABLE_BOND_TORSIONS_PROP)
-    return mol
+
+    protected = parse_ring_attachments_prop(mol)
+    protected.extend(find_new_ring_attachment_geometries(mol))
+    unique = {(torsion, angle): (torsion, angle) for torsion, angle in protected}
+    protected = [unique[key] for key in sorted(unique)]
+    if protected:
+        mol.SetProp(PROTECTED_RING_ATTACHMENTS_PROP, serialize_ring_attachments(protected))
+    elif mol.HasProp(PROTECTED_RING_ATTACHMENTS_PROP):
+        mol.ClearProp(PROTECTED_RING_ATTACHMENTS_PROP)
 
 
-def rotatable_bond_torsions_debug_string(mol):
-    torsions = parse_rotatable_bond_torsions_prop(mol)
-    if not torsions:
-        torsions = find_all_rotatable_bond_torsion_indices(mol)
-    return serialize_rotatable_bond_torsions(torsions) if torsions else "[]"
+def parse_rotatable_bond_torsions_prop(mol):
+    if not mol.HasProp(ROTATABLE_BOND_TORSIONS_PROP):
+        return []
+    return parse_torsions(mol.GetProp(ROTATABLE_BOND_TORSIONS_PROP), mol)
 
 
-def mapped_rotatable_bond_torsion_difference_keeps_branch(
-    query_mol,
-    target_mol,
-    query_to_target,
-    *,
-    dihedral_threshold=ROTATABLE_TORSION_THRESHOLD,
-):
-    """
-    Return True if any current rotatable-bond torsion differs enough to keep the
-    query as a distinct branch.
-
-    Duplicate logic now compares ONLY the current set of all rotatable bonds in
-    the molecule.  It does not use last-growth torsion history, last-4 torsions,
-    protected ring-seed torsions, or ring-attachment angles as extra criteria.
-    """
-    torsions = parse_rotatable_bond_torsions_prop(query_mol)
-    if not torsions:
-        torsions = find_all_rotatable_bond_torsion_indices(query_mol)
-    if not torsions:
+def mapped_torsion_difference(query_mol, target_mol, query_to_target, torsion, threshold):
+    if not torsion_indices_are_valid(query_mol, torsion):
         return False
-
+    try:
+        mapped = tuple(query_to_target[i] for i in torsion)
+    except (KeyError, IndexError, TypeError):
+        return True
+    if not torsion_indices_are_valid(target_mol, mapped):
+        return True
     q_pos = query_mol.GetConformer().GetPositions()
     t_pos = target_mol.GetConformer().GetPositions()
+    q_dihedral = new_dihedral([q_pos[i] for i in torsion])
+    t_dihedral = new_dihedral([t_pos[i] for i in mapped])
+    return angular_diff_deg(q_dihedral, t_dihedral) > threshold
 
-    for torsion in torsions:
-        if not torsion_indices_are_valid(query_mol, torsion):
-            continue
-        try:
-            mapped = tuple(query_to_target[i] for i in torsion)
-        except Exception:
-            # If the torsion cannot be mapped, avoid collapsing potentially
-            # distinct branches.
-            return True
-        if not torsion_indices_are_valid(target_mol, mapped):
+
+def mapped_angle_difference(query_mol, target_mol, query_to_target, angle_indices, threshold):
+    if not angle_indices_are_valid(query_mol, angle_indices):
+        return False
+    try:
+        mapped = tuple(query_to_target[i] for i in angle_indices)
+    except (KeyError, IndexError, TypeError):
+        return True
+    if not angle_indices_are_valid(target_mol, mapped):
+        return True
+    q_pos = query_mol.GetConformer().GetPositions()
+    t_pos = target_mol.GetConformer().GetPositions()
+    q_angle = calc_angle(*(q_pos[i] for i in angle_indices))
+    t_angle = calc_angle(*(t_pos[i] for i in mapped))
+    return angular_diff_deg(q_angle, t_angle) > threshold
+
+
+def mapped_branch_geometry_difference_keeps_branch(query_mol, target_mol, query_to_target):
+    """
+    Preserve a branch if any current or growth-history geometry is distinct.
+
+    The last-growth bond angle is checked only when its terminal atom is a ring
+    type. For a sewn ring-type atom, dihedral and in-plane angle are checked together:
+    such geometries are duplicates only when BOTH values are within threshold.
+    """
+    update_branch_geometry_props(query_mol)
+    update_branch_geometry_props(target_mol)
+
+    for torsion in parse_rotatable_bond_torsions_prop(query_mol):
+        if mapped_torsion_difference(
+            query_mol, target_mol, query_to_target, torsion, ROTATABLE_TORSION_THRESHOLD
+        ):
             return True
 
-        q_dihedral = new_dihedral([q_pos[i] for i in torsion])
-        t_dihedral = new_dihedral([t_pos[i] for i in mapped])
-        if angular_diff_deg(q_dihedral, t_dihedral) > dihedral_threshold:
+    last_growth = find_last_growth_dihedral_indices(query_mol)
+    if last_growth is not None:
+        if mapped_torsion_difference(
+            query_mol, target_mol, query_to_target, last_growth, LAST_GROWTH_TORSION_THRESHOLD
+        ):
+            return True
+        if last_growth_atom_is_ring_type(query_mol, last_growth):
+            _, b_idx, c_idx, d_idx = last_growth
+            if mapped_angle_difference(
+                query_mol,
+                target_mol,
+                query_to_target,
+                (b_idx, c_idx, d_idx),
+                LAST_GROWTH_BOND_ANGLE_THRESHOLD,
+            ):
+                return True
+
+    for torsion, angle_indices in parse_ring_attachments_prop(query_mol):
+        torsion_differs = mapped_torsion_difference(
+            query_mol,
+            target_mol,
+            query_to_target,
+            torsion,
+            RING_ATTACHMENT_TORSION_THRESHOLD,
+        )
+        plane_angle_differs = mapped_angle_difference(
+            query_mol,
+            target_mol,
+            query_to_target,
+            angle_indices,
+            RING_ATTACHMENT_PLANE_ANGLE_THRESHOLD,
+        )
+        if torsion_differs or plane_angle_differs:
             return True
 
     return False
 
 
-def rotatable_geometry_debug_info(mol):
-    """Small serializable summary for SDF props and logs."""
+def branch_geometry_debug_info(mol):
+    update_branch_geometry_props(mol)
+    rotatable = parse_rotatable_bond_torsions_prop(mol)
+    protected = parse_ring_attachments_prop(mol)
     return {
-        "rotatable_bond_torsions": rotatable_bond_torsions_debug_string(mol),
+        "rotatable_bond_torsions": serialize_torsions(rotatable) if rotatable else "[]",
+        "last_growth_torsion": str(find_last_growth_dihedral_indices(mol)),
+        "protected_ring_attachments": serialize_ring_attachments(protected) if protected else "[]",
     }
 
 
 def is_global_selected_duplicate(mol, global_selected_index, *, rmsd_threshold=2.0):
     """
     Global duplicate criterion:
-    1) same canonical SMILES;
-    2) same Counter(types) from prop 'name';
-    3) best no-alignment RMSD over type-matched mappings < rmsd_threshold;
-    4) all current rotatable-bond torsions are geometrically similar within 30°.
-
-    No last-growth torsion history, no last-4 torsion memory, no protected ring
-    keys, and no ring-attachment-angle criteria are used here.
+    1) same canonical SMILES and atom-type multiset;
+    2) best no-alignment type-matched RMSD below threshold;
+    3) no meaningful difference in current rotatable torsions, last-growth
+       torsion, ring-type last-growth angle, or persisted ring-attachment
+       dihedral/plane-angle geometry.
     """
     smiles = safe_canonical_smiles(mol)
     if smiles is None:
@@ -2678,17 +2810,19 @@ def is_global_selected_duplicate(mol, global_selected_index, *, rmsd_threshold=2
         if rmsd is None or rmsd >= rmsd_threshold:
             continue
 
-        update_rotatable_bond_torsions_prop(old_mol)
-        if mapped_rotatable_bond_torsion_difference_keeps_branch(mol, old_mol, mapping):
+        if mapped_branch_geometry_difference_keeps_branch(mol, old_mol, mapping):
             continue
 
-        new_geom_info = rotatable_geometry_debug_info(mol)
-        old_geom_info = rotatable_geometry_debug_info(old_mol)
-
+        new_geom_info = branch_geometry_debug_info(mol)
+        old_geom_info = branch_geometry_debug_info(old_mol)
         duplicate_info = {
             "rmsd": rmsd,
             "rotatable_bond_torsions": new_geom_info["rotatable_bond_torsions"],
+            "last_growth_torsion": new_geom_info["last_growth_torsion"],
+            "protected_ring_attachments": new_geom_info["protected_ring_attachments"],
             "old_rotatable_bond_torsions": old_geom_info["rotatable_bond_torsions"],
+            "old_last_growth_torsion": old_geom_info["last_growth_torsion"],
+            "old_protected_ring_attachments": old_geom_info["protected_ring_attachments"],
             "old_source_iter": old_mol.GetProp("source_iter") if old_mol.HasProp("source_iter") else "NA",
             "old_source_parent_mol": old_mol.GetProp("source_parent_mol") if old_mol.HasProp("source_parent_mol") else "NA",
             "old_global_selected_index": old_mol.GetProp("global_selected_index") if old_mol.HasProp("global_selected_index") else "NA",
@@ -2696,7 +2830,6 @@ def is_global_selected_duplicate(mol, global_selected_index, *, rmsd_threshold=2
         return True, duplicate_info
 
     return False, None
-
 
 def add_mol_to_global_selected_index(mol, global_selected_index):
     """Add accepted molecule to the in-memory index to avoid duplicates inside the same final beam."""
@@ -2711,7 +2844,7 @@ def filter_selected_against_global_history(selected_candidates, all_selected_pat
     Keep candidates in their ranking order, skipping molecules already present in
     all_selected.sdf according to the global duplicate criterion.
 
-    Each candidate is first passed through update_rotatable_bond_torsions_prop(),
+    Each candidate is first passed through update_branch_geometry_props(),
     so all current rotatable-bond torsions are stored in the SDF props before the
     duplicate check and before writing selected/all_selected outputs.
     """
@@ -2720,7 +2853,7 @@ def filter_selected_against_global_history(selected_candidates, all_selected_pat
     skipped = []
 
     for mol in selected_candidates:
-        update_rotatable_bond_torsions_prop(mol)
+        update_branch_geometry_props(mol)
         is_dup, info = is_global_selected_duplicate(mol, global_selected_index)
         if is_dup:
             mol.SetProp("reason_to_skip", "global selected duplicate")
@@ -2731,6 +2864,10 @@ def filter_selected_against_global_history(selected_candidates, all_selected_pat
                 mol.SetProp("global_duplicate_old_index", str(info["old_global_selected_index"]))
                 mol.SetProp("global_duplicate_rotatable_bond_torsions", str(info.get("rotatable_bond_torsions", "NA")))
                 mol.SetProp("global_duplicate_old_rotatable_bond_torsions", str(info.get("old_rotatable_bond_torsions", "NA")))
+                mol.SetProp("global_duplicate_last_growth_torsion", str(info.get("last_growth_torsion", "NA")))
+                mol.SetProp("global_duplicate_protected_ring_attachments", str(info.get("protected_ring_attachments", "NA")))
+                mol.SetProp("global_duplicate_old_last_growth_torsion", str(info.get("old_last_growth_torsion", "NA")))
+                mol.SetProp("global_duplicate_old_protected_ring_attachments", str(info.get("old_protected_ring_attachments", "NA")))
             skipped.append(mol)
             continue
 
@@ -2750,7 +2887,9 @@ def filter_selected_against_global_history(selected_candidates, all_selected_pat
                 f"rmsd={mol.GetProp('global_duplicate_rmsd') if mol.HasProp('global_duplicate_rmsd') else 'NA'}, "
                 f"old_iter={mol.GetProp('global_duplicate_old_source_iter') if mol.HasProp('global_duplicate_old_source_iter') else 'NA'}, "
                 f"old_parent={mol.GetProp('global_duplicate_old_source_parent_mol') if mol.HasProp('global_duplicate_old_source_parent_mol') else 'NA'}, "
-                f"rotatable_torsions={mol.GetProp('global_duplicate_rotatable_bond_torsions') if mol.HasProp('global_duplicate_rotatable_bond_torsions') else 'NA'}\n"
+                f"rotatable_torsions={mol.GetProp('global_duplicate_rotatable_bond_torsions') if mol.HasProp('global_duplicate_rotatable_bond_torsions') else 'NA'}, "
+                f"last_growth={mol.GetProp('global_duplicate_last_growth_torsion') if mol.HasProp('global_duplicate_last_growth_torsion') else 'NA'}, "
+                f"ring_attachments={mol.GetProp('global_duplicate_protected_ring_attachments') if mol.HasProp('global_duplicate_protected_ring_attachments') else 'NA'}\n"
             )
             log.write(msg)
         if len(skipped) > 20:
@@ -5103,3 +5242,5 @@ def launch_nbg(
         if verbose:
             print("Calculations were finished")
         log.write("Calculations were finished\n")
+
+# PR marker: branch-geometry duplicate filtering update.
