@@ -1,0 +1,102 @@
+
+     RDKit          3D
+
+ 10 11  0  0  0  0  0  0  0  0999 V2000
+  -27.8609   -7.5606  -31.1600 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6012   -6.6215  -32.1138 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7248   -8.9090  -31.1461 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8300   -5.3151  -31.8693 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3288   -4.9249  -30.6496 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6041   -5.8580  -29.6557 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3629   -7.1894  -29.9265 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1245   -9.3941  -29.9460 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5322   -8.3225  -29.1590 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4694   -3.5583  -30.6566 N   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+  8  9  2  0
+  7  9  1  0
+  5 10  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car Car Car Car Nd0
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0 close_aromatic_ring no_task
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7226057052612305
+
+>  <NBS>  (1) 
+0.9226057052612304
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+7
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0 1 0 0 0 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+no_task
+
+>  <scenario>  (1) 
+1 0 1 0 0 0 0
+
+>  <current_task>  (1) 
+build_to_Nd0
+
+>  <initiate_ring_bisect>  (1) 
+
+
+>  <ref_match>  (1) 
+1
+
+>  <ref_match_iter>  (1) 
+7
+
+>  <ref_match_stage>  (1) 
+selected_3_final_beam
+
+>  <ref_match_index_in_stage_call>  (1) 
+0
+
+>  <scenario_at_ref_check>  (1) 
+1 0 1 0 0 0 0
+
+>  <current_task_at_ref_check>  (1) 
+no_task
+
+>  <scenario_original>  (1) 
+1 0 1 0 0 0 0
+
+>  <current_task_original>  (1) 
+build_to_Nd0
+
+>  <num_atom_types>  (1) 
+10
+
+$$$$

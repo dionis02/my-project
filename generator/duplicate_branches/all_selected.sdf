@@ -1,0 +1,2865 @@
+
+     RDKit          3D
+
+  4  3  0  0  0  0  0  0  0  0999 V2000
+  -27.8650   -7.7310  -31.7500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6820   -7.0250  -32.9020 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6230   -9.1120  -31.7550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7540   -9.8600  -31.5320 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+1
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+2
+
+>  <NBS phar>  (1) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (1) 
+0.9162927865982056
+
+>  <NBS>  (1) 
+1.1362927865982055
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+1
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (1) 
+1,0,2,3
+
+>  <scenario>  (1) 
+0
+
+$$$$
+
+     RDKit          3D
+
+  4  3  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0975   -9.2947  -30.0006 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+1
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+0
+
+>  <NBS phar>  (2) 
+0.2
+
+>  <NBS_non-phar>  (2) 
+0.9266523122787476
+
+>  <NBS>  (2) 
+1.1266523122787475
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+1
+
+>  <source_parent_mol>  (2) 
+0
+
+>  <source_scenario>  (2) 
+0
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (2) 
+1,0,2,3
+
+>  <scenario>  (2) 
+0
+
+$$$$
+
+     RDKit          3D
+
+  4  3  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8714   -9.7090  -32.3537 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+1
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+3
+
+>  <NBS phar>  (3) 
+0.2
+
+>  <NBS_non-phar>  (3) 
+0.6889480352401733
+
+>  <NBS>  (3) 
+0.8889480352401733
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+1
+
+>  <source_parent_mol>  (3) 
+0
+
+>  <source_scenario>  (3) 
+0
+
+>  <source_rank_in_scored_call>  (3) 
+6
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (3) 
+1,0,2,3
+
+>  <scenario>  (3) 
+0
+
+$$$$
+
+     RDKit          3D
+
+  4  3  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.7067   -9.5040  -30.6833 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+M  END
+>  <name>  (4) 
+Car Nac Nd0 Car
+
+>  <indices>  (4) 
+[0, 1, 2]
+
+>  <dummy>  (4) 
+1
+
+>  <tasks>  (4) 
+probe_placing close_aromatic_ring
+
+>  <current_task>  (4) 
+close_aromatic_ring
+
+>  <prot_clashes>  (4) 
+6
+
+>  <NBS phar>  (4) 
+0.2
+
+>  <NBS_non-phar>  (4) 
+0.6821233630180359
+
+>  <NBS>  (4) 
+0.8821233630180358
+
+>  <source_stage>  (4) 
+scored
+
+>  <source_iter>  (4) 
+1
+
+>  <source_parent_mol>  (4) 
+0
+
+>  <source_scenario>  (4) 
+0
+
+>  <source_rank_in_scored_call>  (4) 
+7
+
+>  <source_current_task>  (4) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (4) 
+1,0,2,3
+
+>  <scenario>  (4) 
+0
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8650   -7.7310  -31.7500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6820   -7.0250  -32.9020 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6230   -9.1120  -31.7550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7540   -9.8600  -31.5320 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7504  -10.7735  -30.3995 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+1
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+1
+
+>  <NBS phar>  (1) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (1) 
+0.8998829841613769
+
+>  <NBS>  (1) 
+1.1198829841613769
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+2
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+0 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (1) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (1) 
+0 0
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8650   -7.7310  -31.7500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6820   -7.0250  -32.9020 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6230   -9.1120  -31.7550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7540   -9.8600  -31.5320 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7601  -10.6310  -30.3603 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+1
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+2
+
+>  <NBS phar>  (2) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (2) 
+0.899344539642334
+
+>  <NBS>  (2) 
+1.119344539642334
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+2
+
+>  <source_parent_mol>  (2) 
+0
+
+>  <source_scenario>  (2) 
+0 0
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (2) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (2) 
+0 0
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8650   -7.7310  -31.7500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6820   -7.0250  -32.9020 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6230   -9.1120  -31.7550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7540   -9.8600  -31.5320 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5566  -11.2637  -32.0069 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+1
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+1
+
+>  <NBS phar>  (3) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (3) 
+0.857022762298584
+
+>  <NBS>  (3) 
+1.077022762298584
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+2
+
+>  <source_parent_mol>  (3) 
+0
+
+>  <source_scenario>  (3) 
+0 0
+
+>  <source_rank_in_scored_call>  (3) 
+2
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (3) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (3) 
+0 0
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8650   -7.7310  -31.7500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6820   -7.0250  -32.9020 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6230   -9.1120  -31.7550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7540   -9.8600  -31.5320 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -29.8265   -8.9613  -31.3539 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (4) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (4) 
+[0, 1, 2]
+
+>  <dummy>  (4) 
+1
+
+>  <tasks>  (4) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (4) 
+close_aromatic_ring
+
+>  <prot_clashes>  (4) 
+7
+
+>  <NBS phar>  (4) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (4) 
+0.7484323978424072
+
+>  <NBS>  (4) 
+0.9684323978424072
+
+>  <source_stage>  (4) 
+scored
+
+>  <source_iter>  (4) 
+2
+
+>  <source_parent_mol>  (4) 
+0
+
+>  <source_scenario>  (4) 
+0 0
+
+>  <source_rank_in_scored_call>  (4) 
+7
+
+>  <source_current_task>  (4) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (4) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (4) 
+0 0
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8650   -7.7310  -31.7500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6820   -7.0250  -32.9020 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6230   -9.1120  -31.7550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7540   -9.8600  -31.5320 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -29.2727  -10.7316  -32.5578 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (5) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (5) 
+[0, 1, 2]
+
+>  <dummy>  (5) 
+1
+
+>  <tasks>  (5) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (5) 
+close_aromatic_ring
+
+>  <prot_clashes>  (5) 
+3
+
+>  <NBS phar>  (5) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (5) 
+0.7330792903900146
+
+>  <NBS>  (5) 
+0.9530792903900147
+
+>  <source_stage>  (5) 
+scored
+
+>  <source_iter>  (5) 
+2
+
+>  <source_parent_mol>  (5) 
+0
+
+>  <source_scenario>  (5) 
+0 0
+
+>  <source_rank_in_scored_call>  (5) 
+9
+
+>  <source_current_task>  (5) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (5) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (5) 
+0 0
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0975   -9.2947  -30.0006 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3802  -10.8247  -30.1335 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+1
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.9181889533996582
+
+>  <NBS>  (1) 
+1.1181889533996583
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+2
+
+>  <source_parent_mol>  (1) 
+1
+
+>  <source_scenario>  (1) 
+0 1
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (1) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (1) 
+0 1
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0975   -9.2947  -30.0006 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1036  -10.8191  -29.9560 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+1
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+0
+
+>  <NBS phar>  (2) 
+0.2
+
+>  <NBS_non-phar>  (2) 
+0.8892837524414062
+
+>  <NBS>  (2) 
+1.0892837524414063
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+2
+
+>  <source_parent_mol>  (2) 
+1
+
+>  <source_scenario>  (2) 
+0 1
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (2) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (2) 
+0 1
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0975   -9.2947  -30.0006 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5014   -8.2952  -29.1740 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+1
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+0
+
+>  <NBS phar>  (3) 
+0.2
+
+>  <NBS_non-phar>  (3) 
+0.8807449340820312
+
+>  <NBS>  (3) 
+1.0807449340820312
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+2
+
+>  <source_parent_mol>  (3) 
+1
+
+>  <source_scenario>  (3) 
+0 1
+
+>  <source_rank_in_scored_call>  (3) 
+2
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (3) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (3) 
+0 1
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0975   -9.2947  -30.0006 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5730   -8.5887  -28.8689 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (4) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (4) 
+[0, 1, 2]
+
+>  <dummy>  (4) 
+1
+
+>  <tasks>  (4) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (4) 
+close_aromatic_ring
+
+>  <prot_clashes>  (4) 
+1
+
+>  <NBS phar>  (4) 
+0.2
+
+>  <NBS_non-phar>  (4) 
+0.8459325790405273
+
+>  <NBS>  (4) 
+1.0459325790405274
+
+>  <source_stage>  (4) 
+scored
+
+>  <source_iter>  (4) 
+2
+
+>  <source_parent_mol>  (4) 
+1
+
+>  <source_scenario>  (4) 
+0 1
+
+>  <source_rank_in_scored_call>  (4) 
+3
+
+>  <source_current_task>  (4) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (4) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (4) 
+0 1
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0975   -9.2947  -30.0006 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -29.2272  -10.2496  -29.9098 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (5) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (5) 
+[0, 1, 2]
+
+>  <dummy>  (5) 
+1
+
+>  <tasks>  (5) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (5) 
+close_aromatic_ring
+
+>  <prot_clashes>  (5) 
+0
+
+>  <NBS phar>  (5) 
+0.2
+
+>  <NBS_non-phar>  (5) 
+0.8110699653625488
+
+>  <NBS>  (5) 
+1.0110699653625488
+
+>  <source_stage>  (5) 
+scored
+
+>  <source_iter>  (5) 
+2
+
+>  <source_parent_mol>  (5) 
+1
+
+>  <source_scenario>  (5) 
+0 1
+
+>  <source_rank_in_scored_call>  (5) 
+4
+
+>  <source_current_task>  (5) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (5) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (5) 
+0 1
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -28.3150   -7.8110  -32.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.4720   -7.0040  -32.9050 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4410   -9.1550  -32.5770 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -29.3520   -9.6600  -31.6480 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.8980  -10.8810  -30.9050 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (6) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (6) 
+[0, 1, 2]
+
+>  <dummy>  (6) 
+1
+
+>  <tasks>  (6) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (6) 
+close_aromatic_ring
+
+>  <prot_clashes>  (6) 
+3
+
+>  <NBS phar>  (6) 
+0.1
+
+>  <NBS_non-phar>  (6) 
+0.5627676963806152
+
+>  <NBS>  (6) 
+0.6627676963806152
+
+>  <source_stage>  (6) 
+scored
+
+>  <source_iter>  (6) 
+2
+
+>  <source_parent_mol>  (6) 
+1
+
+>  <source_scenario>  (6) 
+0 1
+
+>  <source_rank_in_scored_call>  (6) 
+9
+
+>  <source_current_task>  (6) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (6) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (6) 
+0 1
+
+$$$$
+
+     RDKit          3D
+
+  6  6  0  0  0  0  0  0  0  0999 V2000
+  -27.8454   -7.4161  -31.2694 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7110   -8.8447  -31.1986 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1042   -9.3672  -29.9500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4813   -8.3486  -29.2230 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3754   -7.0578  -29.9151 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+  5  6  1  0
+  1  6  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built
+
+>  <prot_clashes>  (1) 
+1
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7459243933359782
+
+>  <NBS>  (1) 
+0.9459243933359782
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+3
+
+>  <source_parent_mol>  (1) 
+2
+
+>  <source_scenario>  (1) 
+0 1 2
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+0 1 2
+
+$$$$
+
+     RDKit          3D
+
+  7  7  0  0  0  0  0  0  0  0999 V2000
+  -27.8454   -7.4161  -31.2694 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7110   -8.8447  -31.1986 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1042   -9.3672  -29.9500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4813   -8.3486  -29.2230 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3754   -7.0578  -29.9151 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7474   -5.8740  -29.2530 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+  5  6  1  0
+  1  6  1  0
+  6  7  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7730259895324707
+
+>  <NBS>  (1) 
+0.9730259895324707
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+4
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+0 1 2 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+0 1 2 0
+
+>  <initiate_ring_bisect>  (1) 
+
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.3780   -7.8060  -31.6290 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6710   -7.3410  -32.8760 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.3760   -9.1900  -31.4040 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2180  -10.1530  -31.9540 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -29.1290  -10.7100  -31.1410 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+1
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+3
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7743264198303222
+
+>  <NBS>  (1) 
+0.9743264198303223
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+2
+
+>  <source_parent_mol>  (1) 
+2
+
+>  <source_scenario>  (1) 
+0 2
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (1) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (1) 
+0 2
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.5730   -7.6020  -31.6140 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7350   -7.1890  -32.9030 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7090   -8.9660  -31.3170 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5910   -9.8860  -31.8790 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2400  -11.2270  -31.7890 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+1
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+3
+
+>  <NBS phar>  (2) 
+0.2
+
+>  <NBS_non-phar>  (2) 
+0.757138729095459
+
+>  <NBS>  (2) 
+0.9571387290954589
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+2
+
+>  <source_parent_mol>  (2) 
+2
+
+>  <source_scenario>  (2) 
+0 2
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (2) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (2) 
+0 2
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.5370   -7.7530  -31.6270 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.9570   -7.3140  -32.8470 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5840   -9.1260  -31.3460 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5420  -10.0540  -31.7480 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -29.3470  -10.6720  -30.8060 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+1
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+2
+
+>  <NBS phar>  (3) 
+0.2
+
+>  <NBS_non-phar>  (3) 
+0.7273970603942871
+
+>  <NBS>  (3) 
+0.9273970603942872
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+2
+
+>  <source_parent_mol>  (3) 
+2
+
+>  <source_scenario>  (3) 
+0 2
+
+>  <source_rank_in_scored_call>  (3) 
+2
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (3) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (3) 
+0 2
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -28.3670   -7.7460  -31.9120 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6610   -7.1190  -32.8950 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0060   -9.0490  -31.5440 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.3520   -9.3500  -30.4580 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.9350   -8.2370  -29.5400 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+1
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+6
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7955093383789062
+
+>  <NBS>  (1) 
+0.9955093383789062
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+2
+
+>  <source_parent_mol>  (1) 
+3
+
+>  <source_scenario>  (1) 
+0 3
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (1) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (1) 
+0 3
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -28.2470   -7.5270  -32.0350 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7090   -7.0020  -33.1720 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0510   -8.8870  -31.7570 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.2100   -9.3400  -30.8700 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.6190   -8.1000  -30.3530 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+1
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+7
+
+>  <NBS phar>  (2) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (2) 
+0.6449050426483154
+
+>  <NBS>  (2) 
+0.8649050426483154
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+2
+
+>  <source_parent_mol>  (2) 
+3
+
+>  <source_scenario>  (2) 
+0 3
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (2) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (2) 
+0 3
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -28.3730   -7.9290  -32.0960 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.4610   -7.1440  -32.7360 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5470   -9.2530  -32.5240 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0800  -10.2930  -31.8940 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7250  -11.5590  -32.1800 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  3  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+1
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+2
+
+>  <NBS phar>  (3) 
+0.1
+
+>  <NBS_non-phar>  (3) 
+0.5065649032592774
+
+>  <NBS>  (3) 
+0.6065649032592774
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+2
+
+>  <source_parent_mol>  (3) 
+3
+
+>  <source_scenario>  (3) 
+0 3
+
+>  <source_rank_in_scored_call>  (3) 
+2
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (3) 
+1,0,2,3;0,2,3,4
+
+>  <scenario>  (3) 
+0 3
+
+$$$$
+
+     RDKit          3D
+
+  4  3  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+2
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+1
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.9189163446426392
+
+>  <NBS>  (1) 
+1.1189163446426391
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+1
+
+>  <source_parent_mol>  (1) 
+1
+
+>  <source_scenario>  (1) 
+1
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2578   -4.8905  -30.7215 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+2
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.8961941719055175
+
+>  <NBS>  (1) 
+1.0961941719055175
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+2
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0
+
+>  <rotatable_bond_torsions>  (1) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2367   -4.9275  -30.7486 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+2
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+0
+
+>  <NBS phar>  (2) 
+0.2
+
+>  <NBS_non-phar>  (2) 
+0.8957483291625976
+
+>  <NBS>  (2) 
+1.0957483291625976
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+2
+
+>  <source_parent_mol>  (2) 
+0
+
+>  <source_scenario>  (2) 
+1 0
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <scenario>  (2) 
+1 0
+
+>  <rotatable_bond_torsions>  (2) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -27.7800   -7.4870  -31.5600 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.3190   -6.6400  -32.5230 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6660   -8.8700  -31.7620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5500   -5.3410  -31.9960 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.3040   -4.0850  -32.5120 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+2
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+1
+
+>  <NBS phar>  (3) 
+0.2
+
+>  <NBS_non-phar>  (3) 
+0.7970532894134521
+
+>  <NBS>  (3) 
+0.9970532894134521
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+2
+
+>  <source_parent_mol>  (3) 
+0
+
+>  <source_scenario>  (3) 
+1 0
+
+>  <source_rank_in_scored_call>  (3) 
+4
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <scenario>  (3) 
+1 0
+
+>  <rotatable_bond_torsions>  (3) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  5  4  0  0  0  0  0  0  0  0999 V2000
+  -28.0390   -7.4530  -31.7250 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5090   -6.5100  -32.5550 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0120   -8.7980  -32.1210 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6630   -5.2870  -31.8500 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.1370   -4.0430  -32.4270 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  1  0
+M  END
+>  <name>  (4) 
+Car Nac Nd0 Car Car
+
+>  <indices>  (4) 
+[0, 1, 2]
+
+>  <dummy>  (4) 
+2
+
+>  <tasks>  (4) 
+probe_placing close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (4) 
+close_aromatic_ring
+
+>  <prot_clashes>  (4) 
+2
+
+>  <NBS phar>  (4) 
+0.1
+
+>  <NBS_non-phar>  (4) 
+0.8467942237854004
+
+>  <NBS>  (4) 
+0.9467942237854003
+
+>  <source_stage>  (4) 
+scored
+
+>  <source_iter>  (4) 
+2
+
+>  <source_parent_mol>  (4) 
+0
+
+>  <source_scenario>  (4) 
+1 0
+
+>  <source_rank_in_scored_call>  (4) 
+6
+
+>  <source_current_task>  (4) 
+close_aromatic_ring
+
+>  <scenario>  (4) 
+1 0
+
+>  <rotatable_bond_torsions>  (4) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2578   -4.8905  -30.7215 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6964   -5.6502  -29.5041 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  1  0
+  5  6  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+2
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+1
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.8808979988098145
+
+>  <NBS>  (1) 
+1.0808979988098144
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+3
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0 0
+
+>  <rotatable_bond_torsions>  (1) 
+0,1,3,4;1,3,4,5
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2578   -4.8905  -30.7215 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5306   -5.9011  -29.7337 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  1  0
+  5  6  2  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+2
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+0
+
+>  <NBS phar>  (2) 
+0.22000000000000003
+
+>  <NBS_non-phar>  (2) 
+0.8525343736012777
+
+>  <NBS>  (2) 
+1.0725343736012778
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+3
+
+>  <source_parent_mol>  (2) 
+0
+
+>  <source_scenario>  (2) 
+1 0 0
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <scenario>  (2) 
+1 0 0
+
+>  <rotatable_bond_torsions>  (2) 
+0,1,3,4;1,3,4,5
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2578   -4.8905  -30.7215 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5614   -5.7200  -29.6646 N   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  1  0
+  5  6  1  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car Nd0
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <dummy>  (3) 
+2
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <prot_clashes>  (3) 
+1
+
+>  <NBS phar>  (3) 
+0.2
+
+>  <NBS_non-phar>  (3) 
+0.7492329279581705
+
+>  <NBS>  (3) 
+0.9492329279581706
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+3
+
+>  <source_parent_mol>  (3) 
+0
+
+>  <source_scenario>  (3) 
+1 0 0
+
+>  <source_rank_in_scored_call>  (3) 
+3
+
+>  <source_current_task>  (3) 
+close_aromatic_ring
+
+>  <scenario>  (3) 
+1 0 0
+
+>  <rotatable_bond_torsions>  (3) 
+0,1,3,4;1,3,4,5
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2367   -4.9275  -30.7486 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6734   -5.6694  -29.5069 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  2  3
+  5  6  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+2
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+1
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.8784493605295817
+
+>  <NBS>  (1) 
+1.0784493605295817
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+3
+
+>  <source_parent_mol>  (1) 
+1
+
+>  <source_scenario>  (1) 
+1 0 1
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0 1
+
+>  <rotatable_bond_torsions>  (1) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -27.8640   -7.4760  -31.1990 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5380   -6.7190  -32.2850 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8024   -5.3830  -31.8813 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2367   -4.9275  -30.7486 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5392   -5.7396  -29.6686 N   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  3
+  1  3  1  0
+  2  4  1  0
+  4  5  2  3
+  5  6  1  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car Nd0
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+2
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+0
+
+>  <NBS phar>  (2) 
+0.2
+
+>  <NBS_non-phar>  (2) 
+0.7488492329915365
+
+>  <NBS>  (2) 
+0.9488492329915366
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+3
+
+>  <source_parent_mol>  (2) 
+1
+
+>  <source_scenario>  (2) 
+1 0 1
+
+>  <source_rank_in_scored_call>  (2) 
+2
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <scenario>  (2) 
+1 0 1
+
+>  <rotatable_bond_torsions>  (2) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  7  7  0  0  0  0  0  0  0  0999 V2000
+  -27.9544   -7.5786  -31.0885 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6252   -6.6792  -32.0546 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7723   -5.3521  -31.8910 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2774   -4.8775  -30.6967 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6304   -5.7525  -29.6749 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4669   -7.1072  -29.8753 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.781130313873291
+
+>  <NBS>  (1) 
+0.981130313873291
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+4
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0 1 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0 1 0
+
+$$$$
+
+     RDKit          3D
+
+  8  8  0  0  0  0  0  0  0  0999 V2000
+  -27.9544   -7.5786  -31.0885 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6252   -6.6792  -32.0546 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7723   -5.3521  -31.8910 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2774   -4.8775  -30.6967 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6304   -5.7525  -29.6749 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4669   -7.1072  -29.8753 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0565   -9.4014  -29.9740 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0
+
+>  <prot_clashes>  (1) 
+1
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.8053122758865356
+
+>  <NBS>  (1) 
+1.0053122758865356
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+5
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0 1 0 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+build_to_Nd0
+
+>  <scenario>  (1) 
+1 0 1 0 0
+
+>  <initiate_ring_110>  (1) 
+
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (1) 
+1,0,2,7
+
+$$$$
+
+     RDKit          3D
+
+  8  8  0  0  0  0  0  0  0  0999 V2000
+  -27.9544   -7.5786  -31.0885 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6252   -6.6792  -32.0546 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7723   -5.3521  -31.8910 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2774   -4.8775  -30.6967 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6304   -5.7525  -29.6749 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4669   -7.1072  -29.8753 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.8046   -9.6905  -31.3453 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car Car Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0
+
+>  <prot_clashes>  (2) 
+2
+
+>  <NBS phar>  (2) 
+0.2
+
+>  <NBS_non-phar>  (2) 
+0.7958453297615051
+
+>  <NBS>  (2) 
+0.9958453297615051
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+5
+
+>  <source_parent_mol>  (2) 
+0
+
+>  <source_scenario>  (2) 
+1 0 1 0 0
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+build_to_Nd0
+
+>  <scenario>  (2) 
+1 0 1 0 0
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (2) 
+1,0,2,7
+
+$$$$
+
+     RDKit          3D
+
+  8  8  0  0  0  0  0  0  0  0999 V2000
+  -27.9544   -7.5786  -31.0885 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6252   -6.6792  -32.0546 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7723   -5.3521  -31.8910 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2774   -4.8775  -30.6967 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6304   -5.7525  -29.6749 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4669   -7.1072  -29.8753 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4577   -9.7167  -32.1581 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+M  END
+>  <name>  (3) 
+Car Nac Nd0 Car Car Car Car Car
+
+>  <indices>  (3) 
+[0, 1, 2]
+
+>  <tasks>  (3) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0
+
+>  <prot_clashes>  (3) 
+1
+
+>  <NBS phar>  (3) 
+0.2
+
+>  <NBS_non-phar>  (3) 
+0.791672945022583
+
+>  <NBS>  (3) 
+0.991672945022583
+
+>  <source_stage>  (3) 
+scored
+
+>  <source_iter>  (3) 
+5
+
+>  <source_parent_mol>  (3) 
+0
+
+>  <source_scenario>  (3) 
+1 0 1 0 0
+
+>  <source_rank_in_scored_call>  (3) 
+3
+
+>  <source_current_task>  (3) 
+build_to_Nd0
+
+>  <scenario>  (3) 
+1 0 1 0 0
+
+>  <current_task>  (3) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (3) 
+1,0,2,7
+
+$$$$
+
+     RDKit          3D
+
+  8  8  0  0  0  0  0  0  0  0999 V2000
+  -27.9544   -7.5786  -31.0885 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6252   -6.6792  -32.0546 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6840   -8.8650  -31.2620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7723   -5.3521  -31.8910 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.2774   -4.8775  -30.6967 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6304   -5.7525  -29.6749 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4669   -7.1072  -29.8753 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.6956   -9.5358  -30.6784 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+M  END
+>  <name>  (4) 
+Car Nac Nd0 Car Car Car Car Car
+
+>  <indices>  (4) 
+[0, 1, 2]
+
+>  <tasks>  (4) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0
+
+>  <prot_clashes>  (4) 
+7
+
+>  <NBS phar>  (4) 
+0.2
+
+>  <NBS_non-phar>  (4) 
+0.6837513446807861
+
+>  <NBS>  (4) 
+0.8837513446807861
+
+>  <source_stage>  (4) 
+scored
+
+>  <source_iter>  (4) 
+5
+
+>  <source_parent_mol>  (4) 
+0
+
+>  <source_scenario>  (4) 
+1 0 1 0 0
+
+>  <source_rank_in_scored_call>  (4) 
+6
+
+>  <source_current_task>  (4) 
+build_to_Nd0
+
+>  <scenario>  (4) 
+1 0 1 0 0
+
+>  <current_task>  (4) 
+close_aromatic_ring
+
+>  <rotatable_bond_torsions>  (4) 
+1,0,2,7
+
+$$$$
+
+     RDKit          3D
+
+  9 10  0  0  0  0  0  0  0  0999 V2000
+  -27.8609   -7.5606  -31.1600 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6012   -6.6215  -32.1138 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7248   -8.9090  -31.1461 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8300   -5.3151  -31.8693 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3288   -4.9249  -30.6496 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6041   -5.8580  -29.6557 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3629   -7.1894  -29.9265 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1245   -9.3941  -29.9460 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5322   -8.3225  -29.1590 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+  8  9  2  0
+  7  9  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0 close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7751019795735677
+
+>  <NBS>  (1) 
+0.9751019795735678
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+6
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0 1 0 0 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0 1 0 0 0
+
+>  <current_task>  (1) 
+no_task
+
+$$$$
+
+     RDKit          3D
+
+ 10 11  0  0  0  0  0  0  0  0999 V2000
+  -27.8609   -7.5606  -31.1600 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6012   -6.6215  -32.1138 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7248   -8.9090  -31.1461 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8300   -5.3151  -31.8693 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3288   -4.9249  -30.6496 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6041   -5.8580  -29.6557 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3629   -7.1894  -29.9265 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1245   -9.3941  -29.9460 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.5322   -8.3225  -29.1590 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4694   -3.5583  -30.6566 N   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0
+  1  3  1  0
+  2  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  1  7  1  0
+  3  8  1  0
+  8  9  2  0
+  7  9  1  0
+  5 10  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car Car Car Car Nd0
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring close_aromatic_ring ring_built build_to_Nd0 close_aromatic_ring no_task
+
+>  <prot_clashes>  (1) 
+0
+
+>  <NBS phar>  (1) 
+0.2
+
+>  <NBS_non-phar>  (1) 
+0.7226057052612305
+
+>  <NBS>  (1) 
+0.9226057052612304
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+7
+
+>  <source_parent_mol>  (1) 
+0
+
+>  <source_scenario>  (1) 
+1 0 1 0 0 0 0
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+no_task
+
+>  <scenario>  (1) 
+1 0 1 0 0 0 0
+
+>  <current_task>  (1) 
+build_to_Nd0
+
+>  <initiate_ring_bisect>  (1) 
+
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -28.7320   -8.0270  -32.2350 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.9040   -7.0830  -32.7640 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.7550   -9.3070  -32.8080 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.0960   -5.9390  -31.9420 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.5440   -4.6760  -31.9860 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.6530   -4.2540  -32.8870 N   0  0  0  0  0  0  0  0  0  0  0  0
+  1  3  1  0
+  1  2  2  3
+  2  4  1  0
+  4  5  2  3
+  5  6  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Nd0
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+2
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+3
+
+>  <NBS phar>  (1) 
+0.1
+
+>  <NBS_non-phar>  (1) 
+0.5834510723749796
+
+>  <NBS>  (1) 
+0.6834510723749796
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+3
+
+>  <source_parent_mol>  (1) 
+2
+
+>  <source_scenario>  (1) 
+1 0 2
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0 2
+
+>  <rotatable_bond_torsions>  (1) 
+0,1,3,4
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -28.4520   -7.3830  -32.1110 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.6200   -6.4090  -32.5790 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3760   -8.6670  -32.6700 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.9250   -5.2690  -31.7900 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.1620   -4.0280  -31.9790 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.1670   -4.0540  -32.9420 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  3  1  0
+  1  2  2  3
+  2  4  1  0
+  4  5  1  0
+  5  6  1  0
+M  END
+>  <name>  (1) 
+Car Nac Nd0 Car Car Car
+
+>  <indices>  (1) 
+[0, 1, 2]
+
+>  <dummy>  (1) 
+2
+
+>  <tasks>  (1) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (1) 
+close_aromatic_ring
+
+>  <prot_clashes>  (1) 
+6
+
+>  <NBS phar>  (1) 
+0.12
+
+>  <NBS_non-phar>  (1) 
+0.5132619539896647
+
+>  <NBS>  (1) 
+0.6332619539896647
+
+>  <source_stage>  (1) 
+scored
+
+>  <source_iter>  (1) 
+3
+
+>  <source_parent_mol>  (1) 
+3
+
+>  <source_scenario>  (1) 
+1 0 3
+
+>  <source_rank_in_scored_call>  (1) 
+0
+
+>  <source_current_task>  (1) 
+close_aromatic_ring
+
+>  <scenario>  (1) 
+1 0 3
+
+>  <rotatable_bond_torsions>  (1) 
+0,1,3,4;1,3,4,5
+
+$$$$
+
+     RDKit          3D
+
+  6  5  0  0  0  0  0  0  0  0999 V2000
+  -28.5750   -7.4640  -32.1890 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7510   -6.4440  -32.5620 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4250   -8.7170  -32.8010 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -28.1390   -5.3530  -31.7400 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -27.4090   -4.0810  -31.8270 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -26.3540   -4.0060  -32.7060 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  3  1  0
+  1  2  2  3
+  2  4  1  0
+  4  5  1  0
+  5  6  2  0
+M  END
+>  <name>  (2) 
+Car Nac Nd0 Car Car Car
+
+>  <indices>  (2) 
+[0, 1, 2]
+
+>  <dummy>  (2) 
+2
+
+>  <tasks>  (2) 
+probe_placing close_aromatic_ring close_aromatic_ring close_aromatic_ring
+
+>  <current_task>  (2) 
+close_aromatic_ring
+
+>  <prot_clashes>  (2) 
+5
+
+>  <NBS phar>  (2) 
+0.12
+
+>  <NBS_non-phar>  (2) 
+0.4729970296223958
+
+>  <NBS>  (2) 
+0.5929970296223959
+
+>  <source_stage>  (2) 
+scored
+
+>  <source_iter>  (2) 
+3
+
+>  <source_parent_mol>  (2) 
+3
+
+>  <source_scenario>  (2) 
+1 0 3
+
+>  <source_rank_in_scored_call>  (2) 
+1
+
+>  <source_current_task>  (2) 
+close_aromatic_ring
+
+>  <scenario>  (2) 
+1 0 3
+
+>  <rotatable_bond_torsions>  (2) 
+0,1,3,4;1,3,4,5
+
+$$$$

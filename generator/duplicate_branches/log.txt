@@ -1,0 +1,851 @@
+
+================================================================================
+START: 2026-06-10 15:32:05
+Generator launched
+Input parameters:
+	mode: scaffold
+	protein_name: flt3_4rt7_ref_protein_final.pdb
+	grid_name: grid_resolved.pdb
+	probe_name: probe.sdf
+	final_mcf_mode: strict
+	limits_dict: {'Car': 12, 'Cs2': 1, 'C3r': 0, 'Cs3': 0, 'Csp': 0, 'Nd+': 0, 'Nd0': 2, 'Nac': 2, '.=O': 1, 'O_a': 0, 'O_d': 0, 'SO2': 0, 'Sul': 0, 'Hal': 0}
+	elem_dict: {'N': 6, 'O': 1, 'S': 1}
+	no_limit: 15
+	max_num_low_cycles: 1
+	important_amino_acid_number: 694
+	important_atom_name: N
+	ligand_role: acceptor
+	gridbox_center_x: -28.1
+	gridbox_center_y: -5.3
+	gridbox_center_z: -28.5
+	phar_model: MedChem
+	allow_axial_groups: False
+	allow_chair_only: True
+	allow_cs3_in_arom_rings: False
+	allow_condensed_alicyclics: False
+	allow_paired_nd0: False
+	max_num_chiral_centers: 0
+	max_poses_of_one_structure: 2
+	allowed_atoms_idxs: []
+	max_clashes: 8
+	max_acyclic_chain_length: 8
+	num_heavy_atoms_to_add: 15
+	number_of_poses_on_iter: 10
+	scoring_method: expo
+	frag_lib: 4-atomic library_added_frags.sdf
+	local_difference_value: 0.5
+	nac_outside_arom_ring: False
+	skip_minimization: True
+	allow_positive_charges: True
+	allow_negative_charges: True
+	max_num_charged_atoms: 3
+	max_execution_time: 48
+	allow_nd0_nac_pair: False
+	allow_double_bonded_arom_rings: False
+	worst_nbg_score: -5
+	allow_linker_sul: False
+	allow_alkenes: False
+	check_crucial_interaction: True
+	min_mol_size: 5
+	max_num_positive_charges: 1
+	max_num_negative_charges: 1
+	time_management_mode: dynamic_snapshot
+	branch_time_factor: 1.0
+	min_branch_seconds: 300
+	max_branch_seconds: 7200
+	dynamic_split_until_iter: 15
+	path_to_working_dir: FLT3_invitro_check_paper_scaffold_full_hybrid_time
+[REF DEBUG] enabled, reference = FLT3_invitro_check_paper_scaffold_full_hybrid_time/ref.sdf
+Reference library to pass filters initiated
+Filters tunung successful
+Generation cycle started
+!!!! 1 !!!!
+Generation started for iter 1 from mol 0
+Two or more uncycled atoms detected, probe duplicated
+!!!! 1 !!!!
+Generation started for iter 1 from mol 0
+Timestamp: 2 probes left on iter 1,
+                                172797 seconds left in total,
+                                172797 seconds left from parent iter,
+                                7200 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+7 mols were written
+Generation finished in 499 ms
+Minimization started
+13 mols were written
+Minimization finished in 1726 ms
+Filtration started
+13 mols were written
+Filtration finished in 466 ms
+Scoring started
+13 mols were written
+Scoring finished in 1154 ms
+Selection started
+Global selected duplicate filter: 4 kept, 1 skipped
+	Skipped global duplicate 0: NBS=1.111332607269287, rmsd=0.2241, old_iter=1, old_parent=0, rotatable_torsions=1,0,2,3
+Selection stage 1: 12 mols selected
+Selection stage 2: 5 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 5 mols selected
+Selection stage 3 after global duplicate filter: 4 mols selected
+4 mols were written
+Selection finished in 64 ms
+!!!! 2 !!!!
+Generation started for iter 2 from mol 0
+Timestamp: 4 probes left on iter 2,
+                                172793 seconds left in total,
+                                7196 seconds left from parent iter,
+                                1799 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+8 mols were written
+Generation finished in 260 ms
+Minimization started
+16 mols were written
+Minimization finished in 1813 ms
+Filtration started
+15 mols were written
+Filtration finished in 407 ms
+Scoring started
+15 mols were written
+Scoring finished in 171 ms
+Selection started
+Global selected duplicate filter: 5 kept, 1 skipped
+	Skipped global duplicate 0: NBS=0.9638793182373047, rmsd=0.2211, old_iter=2, old_parent=0, rotatable_torsions=1,0,2,3;0,2,3,4
+Selection stage 1: 15 mols selected
+Selection stage 2: 6 mols selected
+	2 groups of 1 atom types distinguished
+Selection stage 3 raw: 6 mols selected
+Selection stage 3 after global duplicate filter: 5 mols selected
+5 mols were written
+Selection finished in 105 ms
+!!!! 3 !!!!
+Generation started for iter 3 from mol 0
+Timestamp: 5 probes left on iter 3,
+                                172790 seconds left in total,
+                                1796 seconds left from parent iter,
+                                359 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 1
+Timestamp: 4 probes left on iter 3,
+                                172790 seconds left in total,
+                                1796 seconds left from parent iter,
+                                449 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 2
+Timestamp: 3 probes left on iter 3,
+                                172790 seconds left in total,
+                                1796 seconds left from parent iter,
+                                599 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 3
+Timestamp: 2 probes left on iter 3,
+                                172790 seconds left in total,
+                                1796 seconds left from parent iter,
+                                898 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+list index out of range
+!!!! 3 !!!!
+Generation started for iter 3 from mol 4
+Timestamp: 1 probes left on iter 3,
+                                172790 seconds left in total,
+                                1796 seconds left from parent iter,
+                                1796 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Branch completed: (0, 0)
+Go one step back due to all molecules studied
+!!!! 2 !!!!
+Generation started for iter 2 from mol 1
+Timestamp: 3 probes left on iter 2,
+                                172790 seconds left in total,
+                                7193 seconds left from parent iter,
+                                2398 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+7 mols were written
+Generation finished in 250 ms
+Minimization started
+12 mols were written
+Minimization finished in 1784 ms
+Filtration started
+12 mols were written
+Filtration finished in 329 ms
+Scoring started
+12 mols were written
+Scoring finished in 172 ms
+Selection started
+Global selected duplicate filter: 6 kept, 0 skipped
+Selection stage 1: 10 mols selected
+Selection stage 2: 6 mols selected
+	2 groups of 1 atom types distinguished
+Selection stage 3 raw: 6 mols selected
+Selection stage 3 after global duplicate filter: 6 mols selected
+6 mols were written
+Selection finished in 106 ms
+!!!! 3 !!!!
+Generation started for iter 3 from mol 0
+Timestamp: 6 probes left on iter 3,
+                                172787 seconds left in total,
+                                2395 seconds left from parent iter,
+                                399 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 1
+Timestamp: 5 probes left on iter 3,
+                                172787 seconds left in total,
+                                2395 seconds left from parent iter,
+                                479 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 2
+Timestamp: 4 probes left on iter 3,
+                                172787 seconds left in total,
+                                2395 seconds left from parent iter,
+                                599 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+list index out of range
+1 mols were written
+Generation finished in 115 ms
+Minimization started
+2 mols were written
+Minimization finished in 871 ms
+Filtration started
+2 mols were written
+Filtration finished in 84 ms
+Scoring started
+2 mols were written
+Scoring finished in 114 ms
+Selection started
+Global selected duplicate filter: 1 kept, 1 skipped
+	Skipped global duplicate 0: NBS=0.9375229994455974, rmsd=0.5934, old_iter=3, old_parent=2, rotatable_torsions=[]
+Selection stage 1: 2 mols selected
+Selection stage 2: 2 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 2 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+Ring closed, next locked ring atom unlocked
+1 mols were written
+Selection finished in 42 ms
+!!!! 4 !!!!
+Generation started for iter 4 from mol 0
+Timestamp: 1 probes left on iter 4,
+                                172785 seconds left in total,
+                                597 seconds left from parent iter,
+                                597 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+3 mols were written
+Generation finished in 112 ms
+Minimization started
+6 mols were written
+Minimization finished in 944 ms
+Filtration started
+6 mols were written
+Filtration finished in 216 ms
+Scoring started
+6 mols were written
+Scoring finished in 122 ms
+Selection started
+Global selected duplicate filter: 1 kept, 4 skipped
+	Skipped global duplicate 0: NBS=0.9559334891183036, rmsd=0.0750, old_iter=4, old_parent=0, rotatable_torsions=[]
+	Skipped global duplicate 1: NBS=0.9372981480189733, rmsd=0.1496, old_iter=4, old_parent=0, rotatable_torsions=[]
+	Skipped global duplicate 2: NBS=0.8380421093532018, rmsd=0.5888, old_iter=4, old_parent=0, rotatable_torsions=[]
+	Skipped global duplicate 3: NBS=0.8117673601422992, rmsd=0.7599, old_iter=4, old_parent=0, rotatable_torsions=[]
+Selection stage 1: 6 mols selected
+Selection stage 2: 5 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 5 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+1 mols were written
+Selection finished in 52 ms
+!!!! 5 !!!!
+Generation started for iter 5 from mol 0
+Timestamp: 1 probes left on iter 5,
+                                172784 seconds left in total,
+                                596 seconds left from parent iter,
+                                596 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 5 !!!!
+Branch completed: (0, 1, 2, 0)
+Go one step back due to all molecules studied
+!!!! 4 !!!!
+Branch completed: (0, 1, 2)
+Go one step back due to all molecules studied
+!!!! 3 !!!!
+Generation started for iter 3 from mol 3
+Timestamp: 3 probes left on iter 3,
+                                172784 seconds left in total,
+                                2392 seconds left from parent iter,
+                                797 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 4
+Timestamp: 2 probes left on iter 3,
+                                172784 seconds left in total,
+                                2392 seconds left from parent iter,
+                                1196 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 5
+Timestamp: 1 probes left on iter 3,
+                                172784 seconds left in total,
+                                2392 seconds left from parent iter,
+                                2392 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Branch completed: (0, 1)
+Go one step back due to all molecules studied
+!!!! 2 !!!!
+Generation started for iter 2 from mol 2
+Timestamp: 2 probes left on iter 2,
+                                172783 seconds left in total,
+                                7186 seconds left from parent iter,
+                                3593 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+7 mols were written
+Generation finished in 331 ms
+Minimization started
+11 mols were written
+Minimization finished in 1769 ms
+Filtration started
+8 mols were written
+Filtration finished in 308 ms
+Scoring started
+8 mols were written
+Scoring finished in 158 ms
+Selection started
+Global selected duplicate filter: 3 kept, 0 skipped
+Selection stage 1: 8 mols selected
+Selection stage 2: 3 mols selected
+	2 groups of 1 atom types distinguished
+Selection stage 3 raw: 3 mols selected
+Selection stage 3 after global duplicate filter: 3 mols selected
+3 mols were written
+Selection finished in 106 ms
+!!!! 3 !!!!
+Generation started for iter 3 from mol 0
+Timestamp: 3 probes left on iter 3,
+                                172781 seconds left in total,
+                                3591 seconds left from parent iter,
+                                1197 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 1
+Timestamp: 2 probes left on iter 3,
+                                172781 seconds left in total,
+                                3590 seconds left from parent iter,
+                                1795 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 2
+Timestamp: 1 probes left on iter 3,
+                                172780 seconds left in total,
+                                3590 seconds left from parent iter,
+                                3590 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Branch completed: (0, 2)
+Go one step back due to all molecules studied
+!!!! 2 !!!!
+Generation started for iter 2 from mol 3
+Timestamp: 1 probes left on iter 2,
+                                172780 seconds left in total,
+                                7183 seconds left from parent iter,
+                                7183 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+8 mols were written
+Generation finished in 274 ms
+Minimization started
+10 mols were written
+Minimization finished in 1812 ms
+Filtration started
+8 mols were written
+Filtration finished in 293 ms
+Scoring started
+8 mols were written
+Scoring finished in 152 ms
+Selection started
+Global selected duplicate filter: 3 kept, 0 skipped
+Selection stage 1: 3 mols selected
+Selection stage 2: 3 mols selected
+	2 groups of 1 atom types distinguished
+Selection stage 3 raw: 3 mols selected
+Selection stage 3 after global duplicate filter: 3 mols selected
+3 mols were written
+Selection finished in 87 ms
+!!!! 3 !!!!
+Generation started for iter 3 from mol 0
+Timestamp: 3 probes left on iter 3,
+                                172778 seconds left in total,
+                                7181 seconds left from parent iter,
+                                2394 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Generation started for iter 3 from mol 1
+Timestamp: 2 probes left on iter 3,
+                                172778 seconds left in total,
+                                7181 seconds left from parent iter,
+                                3590 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+list index out of range
+!!!! 3 !!!!
+Generation started for iter 3 from mol 2
+Timestamp: 1 probes left on iter 3,
+                                172777 seconds left in total,
+                                7180 seconds left from parent iter,
+                                7180 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 3 !!!!
+Branch completed: (0, 3)
+Go one step back due to all molecules studied
+!!!! 2 !!!!
+Branch completed: (0,)
+Go one step back due to all molecules studied
+!!!! 1 !!!!
+Generation started for iter 1 from mol 1
+Timestamp: 1 probes left on iter 1,
+                                172777 seconds left in total,
+                                172777 seconds left from parent iter,
+                                7200 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+4 mols were written
+Generation finished in 196 ms
+Minimization started
+6 mols were written
+Minimization finished in 1144 ms
+Filtration started
+4 mols were written
+Filtration finished in 195 ms
+Scoring started
+4 mols were written
+Scoring finished in 107 ms
+Selection started
+Global selected duplicate filter: 1 kept, 0 skipped
+Selection stage 1: 4 mols selected
+Selection stage 2: 1 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 1 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+1 mols were written
+Selection finished in 40 ms
+!!!! 2 !!!!
+Generation started for iter 2 from mol 0
+Timestamp: 1 probes left on iter 2,
+                                172776 seconds left in total,
+                                7198 seconds left from parent iter,
+                                7198 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+7 mols were written
+Generation finished in 373 ms
+Minimization started
+14 mols were written
+Minimization finished in 1848 ms
+Filtration started
+14 mols were written
+Filtration finished in 383 ms
+Scoring started
+14 mols were written
+Scoring finished in 172 ms
+Selection started
+Global selected duplicate filter: 4 kept, 2 skipped
+	Skipped global duplicate 0: NBS=1.084354782104492, rmsd=0.2689, old_iter=2, old_parent=0, rotatable_torsions=0,1,3,4
+	Skipped global duplicate 1: NBS=0.9351341724395752, rmsd=0.4703, old_iter=2, old_parent=0, rotatable_torsions=0,1,3,4
+Selection stage 1: 14 mols selected
+Selection stage 2: 6 mols selected
+	2 groups of 1 atom types distinguished
+Selection stage 3 raw: 6 mols selected
+Selection stage 3 after global duplicate filter: 4 mols selected
+4 mols were written
+Selection finished in 116 ms
+!!!! 3 !!!!
+Generation started for iter 3 from mol 0
+Timestamp: 4 probes left on iter 3,
+                                172773 seconds left in total,
+                                7195 seconds left from parent iter,
+                                1799 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+4 mols were written
+Generation finished in 210 ms
+Minimization started
+8 mols were written
+Minimization finished in 969 ms
+Filtration started
+8 mols were written
+Filtration finished in 237 ms
+Scoring started
+8 mols were written
+Scoring finished in 134 ms
+Selection started
+Global selected duplicate filter: 3 kept, 0 skipped
+Selection stage 1: 8 mols selected
+Selection stage 2: 3 mols selected
+	3 groups of 2 atom types distinguished
+Selection stage 3 raw: 3 mols selected
+Selection stage 3 after global duplicate filter: 3 mols selected
+3 mols were written
+Selection finished in 59 ms
+!!!! 4 !!!!
+Generation started for iter 4 from mol 0
+Timestamp: 3 probes left on iter 4,
+                                172771 seconds left in total,
+                                1797 seconds left from parent iter,
+                                599 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Generation started for iter 4 from mol 1
+Timestamp: 2 probes left on iter 4,
+                                172771 seconds left in total,
+                                1797 seconds left from parent iter,
+                                899 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Generation started for iter 4 from mol 2
+Timestamp: 1 probes left on iter 4,
+                                172771 seconds left in total,
+                                1797 seconds left from parent iter,
+                                1797 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Branch completed: (1, 0, 0)
+Go one step back due to all molecules studied
+!!!! 3 !!!!
+Generation started for iter 3 from mol 1
+Timestamp: 3 probes left on iter 3,
+                                172771 seconds left in total,
+                                7193 seconds left from parent iter,
+                                2398 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+3 mols were written
+Generation finished in 181 ms
+Minimization started
+6 mols were written
+Minimization finished in 966 ms
+Filtration started
+6 mols were written
+Filtration finished in 182 ms
+Scoring started
+6 mols were written
+Scoring finished in 127 ms
+Selection started
+Global selected duplicate filter: 2 kept, 1 skipped
+	Skipped global duplicate 0: NBS=1.057897440592448, rmsd=0.1572, old_iter=3, old_parent=1, rotatable_torsions=0,1,3,4
+Selection stage 1: 6 mols selected
+Selection stage 2: 3 mols selected
+	2 groups of 2 atom types distinguished
+Selection stage 3 raw: 3 mols selected
+Selection stage 3 after global duplicate filter: 2 mols selected
+2 mols were written
+Selection finished in 59 ms
+!!!! 4 !!!!
+Generation started for iter 4 from mol 0
+Timestamp: 2 probes left on iter 4,
+                                172769 seconds left in total,
+                                2396 seconds left from parent iter,
+                                1198 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+1 mols were written
+Generation finished in 250 ms
+Minimization started
+2 mols were written
+Minimization finished in 866 ms
+Filtration started
+2 mols were written
+Filtration finished in 133 ms
+Scoring started
+Trying to yield output
+Yielding canceled by output mcf
+Trying to yield output
+Yielding canceled by output mcf
+2 mols were written
+Scoring finished in 130 ms
+Selection started
+Global selected duplicate filter: 1 kept, 1 skipped
+	Skipped global duplicate 0: NBS=0.8800109318324498, rmsd=0.6338, old_iter=4, old_parent=0, rotatable_torsions=[]
+Selection stage 1: 2 mols selected
+Selection stage 2: 2 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 2 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+Ring closed, next locked ring atom unlocked
+1 mols were written
+Selection finished in 57 ms
+!!!! 5 !!!!
+Generation started for iter 5 from mol 0
+Timestamp: 1 probes left on iter 5,
+                                172768 seconds left in total,
+                                1197 seconds left from parent iter,
+                                1197 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+build_to_Nd0
+10 mols were written
+Generation finished in 545 ms
+Minimization started
+20 mols were written
+Minimization finished in 2750 ms
+Filtration started
+19 mols were written
+Filtration finished in 534 ms
+Scoring started
+19 mols were written
+Scoring finished in 226 ms
+Selection started
+Global selected duplicate filter: 4 kept, 1 skipped
+	Skipped global duplicate 0: NBS=0.9957637906074523, rmsd=0.2052, old_iter=5, old_parent=0, rotatable_torsions=1,0,2,7
+Selection stage 1: 19 mols selected
+Selection stage 2: 5 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 5 mols selected
+Selection stage 3 after global duplicate filter: 4 mols selected
+4 mols were written
+Selection finished in 104 ms
+!!!! 6 !!!!
+Generation started for iter 6 from mol 0
+Timestamp: 4 probes left on iter 6,
+                                172764 seconds left in total,
+                                1193 seconds left from parent iter,
+                                298 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+1 mols were written
+Generation finished in 264 ms
+Minimization started
+2 mols were written
+Minimization finished in 967 ms
+Filtration started
+2 mols were written
+Filtration finished in 133 ms
+Scoring started
+Trying to yield output
+Yielding canceled by bad redocking
+Trying to yield output
+Yielding canceled by bad redocking
+2 mols were written
+Scoring finished in 10862 ms
+Selection started
+Global selected duplicate filter: 1 kept, 1 skipped
+	Skipped global duplicate 0: NBS=0.7738046540154351, rmsd=0.8112, old_iter=6, old_parent=0, rotatable_torsions=[]
+Selection stage 1: 2 mols selected
+Selection stage 2: 2 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 2 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+1 mols were written
+Selection finished in 54 ms
+!!!! 7 !!!!
+Generation started for iter 7 from mol 0
+Timestamp: 1 probes left on iter 7,
+                                172751 seconds left in total,
+                                286 seconds left from parent iter,
+                                286 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+no_task
+3 mols were written
+Generation finished in 639 ms
+Minimization started
+6 mols were written
+Minimization finished in 945 ms
+Filtration started
+6 mols were written
+Filtration finished in 191 ms
+Scoring started
+6 mols were written
+Scoring finished in 133 ms
+Selection started
+Global selected duplicate filter: 1 kept, 3 skipped
+	Skipped global duplicate 0: NBS=0.9187162399291993, rmsd=0.1676, old_iter=7, old_parent=0, rotatable_torsions=[]
+	Skipped global duplicate 1: NBS=0.9146941661834718, rmsd=0.0842, old_iter=7, old_parent=0, rotatable_torsions=[]
+	Skipped global duplicate 2: NBS=0.8119265556335449, rmsd=1.2068, old_iter=7, old_parent=0, rotatable_torsions=[]
+Selection stage 1: 6 mols selected
+Selection stage 2: 4 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 4 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+1 mols were written
+Selection finished in 48 ms
+!!!! 8 !!!!
+Generation started for iter 8 from mol 0
+Timestamp: 1 probes left on iter 8,
+                                172749 seconds left in total,
+                                284 seconds left from parent iter,
+                                284 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+build_to_Nd0
+!!!! 8 !!!!
+Branch completed: (1, 0, 1, 0, 0, 0, 0)
+Go one step back due to all molecules studied
+!!!! 7 !!!!
+Branch completed: (1, 0, 1, 0, 0, 0)
+Go one step back due to all molecules studied
+!!!! 6 !!!!
+Generation started for iter 6 from mol 1
+Timestamp: 3 probes left on iter 6,
+                                172749 seconds left in total,
+                                1178 seconds left from parent iter,
+                                393 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 6 !!!!
+Generation started for iter 6 from mol 2
+Timestamp: 2 probes left on iter 6,
+                                172749 seconds left in total,
+                                1178 seconds left from parent iter,
+                                589 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 6 !!!!
+Generation started for iter 6 from mol 3
+Timestamp: 1 probes left on iter 6,
+                                172748 seconds left in total,
+                                1177 seconds left from parent iter,
+                                1177 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 6 !!!!
+Branch completed: (1, 0, 1, 0, 0)
+Go one step back due to all molecules studied
+!!!! 5 !!!!
+Branch completed: (1, 0, 1, 0)
+Go one step back due to all molecules studied
+!!!! 4 !!!!
+Generation started for iter 4 from mol 1
+Timestamp: 1 probes left on iter 4,
+                                172748 seconds left in total,
+                                2375 seconds left from parent iter,
+                                2375 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Branch completed: (1, 0, 1)
+Go one step back due to all molecules studied
+!!!! 3 !!!!
+Generation started for iter 3 from mol 2
+Timestamp: 2 probes left on iter 3,
+                                172748 seconds left in total,
+                                7171 seconds left from parent iter,
+                                3585 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+2 mols were written
+Generation finished in 129 ms
+Minimization started
+3 mols were written
+Minimization finished in 898 ms
+Filtration started
+1 mols were written
+Filtration finished in 78 ms
+Scoring started
+1 mols were written
+Scoring finished in 108 ms
+Selection started
+Global selected duplicate filter: 1 kept, 0 skipped
+Selection stage 1: 1 mols selected
+Selection stage 2: 1 mols selected
+	1 groups of 1 atom types distinguished
+Selection stage 3 raw: 1 mols selected
+Selection stage 3 after global duplicate filter: 1 mols selected
+1 mols were written
+Selection finished in 42 ms
+!!!! 4 !!!!
+Generation started for iter 4 from mol 0
+Timestamp: 1 probes left on iter 4,
+                                172747 seconds left in total,
+                                3584 seconds left from parent iter,
+                                3584 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Branch completed: (1, 0, 2)
+Go one step back due to all molecules studied
+!!!! 3 !!!!
+Generation started for iter 3 from mol 3
+Timestamp: 1 probes left on iter 3,
+                                172747 seconds left in total,
+                                7169 seconds left from parent iter,
+                                7169 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+4 mols were written
+Generation finished in 231 ms
+Minimization started
+7 mols were written
+Minimization finished in 962 ms
+Filtration started
+2 mols were written
+Filtration finished in 170 ms
+Scoring started
+2 mols were written
+Scoring finished in 111 ms
+Selection started
+Global selected duplicate filter: 2 kept, 0 skipped
+Selection stage 1: 2 mols selected
+Selection stage 2: 2 mols selected
+	2 groups of 1 atom types distinguished
+Selection stage 3 raw: 2 mols selected
+Selection stage 3 after global duplicate filter: 2 mols selected
+2 mols were written
+Selection finished in 70 ms
+!!!! 4 !!!!
+Generation started for iter 4 from mol 0
+Timestamp: 2 probes left on iter 4,
+                                172745 seconds left in total,
+                                7168 seconds left from parent iter,
+                                3584 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Generation started for iter 4 from mol 1
+Timestamp: 1 probes left on iter 4,
+                                172745 seconds left in total,
+                                7168 seconds left from parent iter,
+                                7168 seconds left for the current branch,
+                                time policy: dynamic_split, dynamic_split_until_iter=15
+close_aromatic_ring
+!!!! 4 !!!!
+Branch completed: (1, 0, 3)
+Go one step back due to all molecules studied
+!!!! 3 !!!!
+Branch completed: (1, 0)
+Go one step back due to all molecules studied
+!!!! 2 !!!!
+Branch completed: (1,)
+Go one step back due to all molecules studied
+!!!! 1 !!!!
+All possible combinations were generated
+Calculations were finished
+END: 2026-06-10 15:33:00
+RUNTIME_SECONDS: 55.49
+RUNTIME_HOURS: 0.015
+================================================================================
