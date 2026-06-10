@@ -2543,6 +2543,20 @@ def last_growth_atom_is_ring_type(mol, last_growth):
     d_idx = last_growth[3]
     return d_idx < len(names) and names[d_idx] in ring_types
 
+    d_idx = mol.GetNumAtoms() - 1
+    d_atom = mol.GetAtomWithIdx(d_idx)
+    candidate_torsions = []
+    for c_atom in d_atom.GetNeighbors():
+        c_idx = c_atom.GetIdx()
+        for b_atom in c_atom.GetNeighbors():
+            b_idx = b_atom.GetIdx()
+            if b_idx == d_idx:
+                continue
+            for a_atom in b_atom.GetNeighbors():
+                a_idx = a_atom.GetIdx()
+                torsion = (a_idx, b_idx, c_idx, d_idx)
+                if torsion_indices_are_valid(mol, torsion):
+                    candidate_torsions.append(torsion)
 
 def find_last_growth_dihedral_indices(mol):
     """Return a deterministic a-b-c-d torsion where d is the last added atom."""
